@@ -1,0 +1,93 @@
+date,day_of_week,event_tags,predicted_sales_INR,ci_lower_80,ci_upper_80
+2025-07-01,Tuesday,Monthly Salary Restock,136492.34,86494.34,186490.34
+2025-07-02,Wednesday,Monthly Salary Restock,137934.48,87936.48,187932.48
+2025-07-03,Thursday,Monthly Salary Restock,133430.36,83432.36,183428.36
+2025-07-04,Friday,Regular Business Day,130610.39,80612.39,180608.39
+2025-07-05,Saturday,Regular Weekend,146921.92,96923.92,196919.92
+2025-07-06,Sunday,Regular Weekend,144364.22,94366.22,194362.22
+2025-07-07,Monday,Regular Business Day,132100.81,82102.81,182098.81
+2025-07-08,Tuesday,Regular Business Day,129884.03,79886.03,179882.03
+2025-07-09,Wednesday,Regular Business Day,131510.53,81512.53,181508.53
+2025-07-10,Thursday,Regular Business Day,128311.11,78313.11,178309.11
+2025-07-11,Friday,Regular Business Day,133017.61,83019.61,183015.61
+2025-07-12,Saturday,Regular Weekend,149463.62,99465.62,199461.62
+2025-07-13,Sunday,Regular Weekend,148139.5,98141.5,198137.5
+2025-07-14,Monday,Regular Business Day,137870.25,87872.25,187868.25
+2025-07-15,Tuesday,Regular Business Day,135578.17,85580.17,185576.17
+2025-07-16,Wednesday,Regular Business Day,136149.59,86151.59,186147.59
+2025-07-17,Thursday,Regular Business Day,127104.29,77106.29,177102.29
+2025-07-18,Friday,Regular Business Day,130166.86,80168.86,180164.86
+2025-07-19,Saturday,Regular Weekend,144813.16,94815.16,194811.16
+2025-07-20,Sunday,Regular Weekend,145045.92,95047.92,195043.92
+2025-07-21,Monday,Regular Business Day,133861.61,83863.61,183859.61
+2025-07-22,Tuesday,Regular Business Day,129691.97,79693.97,179689.97
+2025-07-23,Wednesday,Regular Business Day,131036.1,81038.1,181034.1
+2025-07-24,Thursday,Regular Business Day,128694.48,78696.48,178692.48
+2025-07-25,Friday,Regular Business Day,132235.52,82237.52,182233.52
+2025-07-26,Saturday,Regular Weekend,147950.05,97952.05,197948.05
+2025-07-27,Sunday,Regular Weekend,146570.89,96572.89,196568.89
+2025-07-28,Monday,Monthly Salary Restock,142825.67,92827.67,192823.67
+2025-07-29,Tuesday,Monthly Salary Restock,141918.13,91920.13,191916.13
+2025-07-30,Wednesday,Monthly Salary Restock,142495.81,92497.81,192493.81
+2025-07-31,Thursday,Monthly Salary Restock,138401.9,88403.9,188399.9
+2025-08-01,Friday,Monthly Salary Restock,142196.56,92198.56,192194.56
+2025-08-02,Saturday,Weekend Payday Surge,166010.8,116012.8,216008.8
+2025-08-03,Sunday,Weekend Payday Surge,165442.1,115444.1,215440.1
+2025-08-04,Monday,Regular Business Day,139061.06,89063.06,189059.06
+2025-08-05,Tuesday,Regular Business Day,135542.73,85544.73,185540.73
+2025-08-06,Wednesday,Regular Business Day,136145.35,86147.35,186143.35
+2025-08-07,Thursday,Raksha Bandhan,131532.06,81534.06,181530.06
+2025-08-08,Friday,Raksha Bandhan,135290.66,85292.66,185288.66
+2025-08-09,Saturday,Raksha Bandhan + Regular Weekend,150916.7,100918.7,200914.7
+2025-08-10,Sunday,Raksha Bandhan + Regular Weekend,149698.52,99700.52,199696.52
+2025-08-11,Monday,Regular Business Day,139083.34,89085.34,189081.34
+2025-08-12,Tuesday,Regular Business Day,136346.32,86348.32,186344.32
+2025-08-13,Wednesday,Regular Business Day,136921.62,86923.62,186919.62
+2025-08-14,Thursday,Independence Day Weekend,130193.65,80195.65,180191.65
+2025-08-15,Friday,Independence Day Weekend,133688.74,83690.74,183686.74
+2025-08-16,Saturday,Independence Day Weekend + Regular Weekend,149289.66,99291.66,199287.66
+2025-08-17,Sunday,Regular Weekend,150743.77,100745.77,200741.77
+2025-08-18,Monday,Regular Business Day,139441.85,89443.85,189439.85
+2025-08-19,Tuesday,Regular Business Day,136769.9,86771.9,186767.9
+2025-08-20,Wednesday,Regular Business Day,137427.53,87429.53,187425.53
+2025-08-21,Thursday,Regular Business Day,133510.42,83512.42,183508.42
+2025-08-22,Friday,Regular Business Day,137357.4,87359.4,187355.4
+2025-08-23,Saturday,Regular Weekend,153172.79,103174.79,203170.79
+2025-08-24,Sunday,Intl Dog Day (Promo Peak) + Regular Weekend,153655.21,103657.21,203653.21
+2025-08-25,Monday,Intl Dog Day (Promo Peak),142333.72,92335.72,192331.72
+2025-08-26,Tuesday,Intl Dog Day (Promo Peak),139654.29,89656.29,189652.29
+2025-08-27,Wednesday,Intl Dog Day (Promo Peak) + Ganesh Chaturthi,140209.6,90211.6,190207.6
+2025-08-28,Thursday,Ganesh Chaturthi + Monthly Salary Restock,141563.66,91565.66,191561.66
+2025-08-29,Friday,Ganesh Chaturthi + Monthly Salary Restock,145578.32,95580.32,195576.32
+2025-08-30,Saturday,Ganesh Chaturthi + Weekend Payday Surge,169375.75,119377.75,219373.75
+2025-08-31,Sunday,Weekend Payday Surge,168872.29,118874.29,218870.29
+2025-09-01,Monday,Monthly Salary Restock,149569.47,99571.47,199567.47
+2025-09-02,Tuesday,Monthly Salary Restock,146244.76,96246.76,196242.76
+2025-09-03,Wednesday,Monthly Salary Restock,146625.6,96627.6,196623.6
+2025-09-04,Thursday,Regular Business Day,135518.78,85520.78,185516.78
+2025-09-05,Friday,Regular Business Day,138908.36,88910.36,188906.36
+2025-09-06,Saturday,Regular Weekend,154493.27,104495.27,204491.27
+2025-09-07,Sunday,Regular Weekend,153279.95,103281.95,203277.95
+2025-09-08,Monday,Regular Business Day,141920.85,91922.85,191918.85
+2025-09-09,Tuesday,Regular Business Day,139174.15,89176.15,189172.15
+2025-09-10,Wednesday,Regular Business Day,139780.78,89782.78,189778.78
+2025-09-11,Thursday,Regular Business Day,135865.27,85867.27,185863.27
+2025-09-12,Friday,Regular Business Day,139617.87,89619.87,189615.87
+2025-09-13,Saturday,Regular Weekend,155347.72,105349.72,205345.72
+2025-09-14,Sunday,Regular Weekend,154201.8,104203.8,204199.8
+2025-09-15,Monday,Regular Business Day,142778.64,92780.64,192776.64
+2025-09-16,Tuesday,Regular Business Day,140075.23,90077.23,190073.23
+2025-09-17,Wednesday,Regular Business Day,140677.31,90679.31,190675.31
+2025-09-18,Thursday,Regular Business Day,136661.44,86663.44,186659.44
+2025-09-19,Friday,Regular Business Day,140411.64,90413.64,190409.64
+2025-09-20,Saturday,Regular Weekend,156145.54,106147.54,206143.54
+2025-09-21,Sunday,Regular Weekend,154942.48,104944.48,204940.48
+2025-09-22,Monday,Navratri Season,142685.5,92687.5,192683.5
+2025-09-23,Tuesday,Navratri Season,139850.39,89852.39,189848.39
+2025-09-24,Wednesday,Navratri Season,140375.78,90377.78,190373.78
+2025-09-25,Thursday,Navratri Season,136286.23,86288.23,186284.23
+2025-09-26,Friday,Navratri Season,139959.89,89961.89,189957.89
+2025-09-27,Saturday,Navratri Season + Regular Weekend,155617.57,105619.57,205615.57
+2025-09-28,Sunday,Navratri Season + Weekend Payday Surge,169408.1,119410.1,219406.1
+2025-09-29,Monday,Navratri Season + Monthly Salary Restock,150778.76,100780.76,200776.76
+2025-09-30,Tuesday,Navratri Season + Monthly Salary Restock,147442.35,97444.35,197440.35
