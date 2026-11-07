@@ -40,12 +40,18 @@ TOD310_JustDogs_Forecasting_Project/
 
 ---
 
-## Final Recommended Champion Model: Explicit Event-Aware Ridge Model (Arth)
-Located in [`Arth/`](Arth/), this model combines:
-1. **Explicit One-Hot Event Matrix (15 Binary Columns):** Maps Hindu lunar festival dates (Diwali, Rakhi, Ganesh Chaturthi, Navratri, Holi), global animal days (International Dog Day, World Animal Day), and monthly payday restock waves.
-2. **Regularized Ridge Regression ($L_2$ Penalty, $\alpha = 60.0$):** Prevents overfitting on sparse annual festival days while isolating rupee-level impacts.
-3. **4-Quarter Rolling Walk-Forward CV:** Achieved **88.94% 4-Season Average Accuracy** (**89.51%** on the Q3 historical season matching Prof. Amit's evaluation horizon).
-4. **Projected Q3 2025 Revenue:** **₹1,30,86,263.14 (~₹1.31 Crores)** across 92 daily predictions.
+## Final Recommended Champion Model: Top 5 Products Explicit Event-Aware Ridge Model (Arth)
+Located in [`Arth/`](Arth/), this model focuses on the **Top 5 Strategic Products** of JustDogs:
+1. **P04606 (Premium 10kg Dog Nutrition):** #1 Revenue Driver (INR 30.55 Lakhs recent sales, 93.7% Q3 accuracy).
+2. **P02065 (Essential Care & Grooming):** #1 Frequency Leader (250/365 active days, 81.0% Q2 accuracy).
+3. **P01032 (Luxury Orthopedic Crates & Bedding):** #1 Lifetime Revenue Asset (INR 53.53 Lakhs total sales, 95.0% Q2 accuracy).
+4. **P00084 (Wet Food Gravy Pouches):** #1 Predictability Staple (99.2% Q2 accuracy, 3-year unbroken stability).
+5. **P04291 (High-Velocity Dental Treats):** FMCG Volume Leader (2,986 units sold, 94.3% Q2 accuracy).
+
+### Key Features:
+* **15 Explicit One-Hot Event Columns:** Hindu lunar festival dates (Diwali, Rakhi, Ganesh Chaturthi, Navratri, Holi), global animal days (Dog Day, World Animal Day), and monthly payday restock waves.
+* **Ridge Regularization ($L_2$ Penalty, $\alpha = 40.0$):** Stabilizes sparse festival parameters.
+* **Total Projected Q3 2025 Portfolio Sales:** **₹12,43,397.80 (~₹12.43 Lakhs)** across **2,548 units**.
 
 ### Quick Start
 To reproduce Arth's model and regenerate the Excel workbook and forecast CSV:

@@ -1,0 +1,16 @@
+product_id,product_name,category,forecast_month,predicted_sales_INR,predicted_units_demand,predicted_units_offline,predicted_units_online,asp_INR
+P04606,Royal Canin / Pedigree 10kg Premium Nutrition,Premium Dog Nutrition,July 2025,41611.59,19,19,0,2223.65
+P04606,Royal Canin / Pedigree 10kg Premium Nutrition,Premium Dog Nutrition,August 2025,102224.04,46,46,0,2223.65
+P04606,Royal Canin / Pedigree 10kg Premium Nutrition,Premium Dog Nutrition,September 2025,143737.14,65,65,0,2223.65
+P02065,Himalaya / Bio-Groom Essential Care & Hygiene,Grooming & Essential Care,July 2025,208332.67,224,220,4,930.4
+P02065,Himalaya / Bio-Groom Essential Care & Hygiene,Grooming & Essential Care,August 2025,208019.62,224,220,4,930.4
+P02065,Himalaya / Bio-Groom Essential Care & Hygiene,Grooming & Essential Care,September 2025,193348.22,208,204,4,930.4
+P01032,Savic / Ferplast Luxury Orthopedic Crate & Bedding,Durable Equipment & Bedding,July 2025,76013.01,6,6,0,12654.93
+P01032,Savic / Ferplast Luxury Orthopedic Crate & Bedding,Durable Equipment & Bedding,August 2025,71891.44,6,6,0,12654.93
+P01032,Savic / Ferplast Luxury Orthopedic Crate & Bedding,Durable Equipment & Bedding,September 2025,73969.89,6,6,0,12654.93
+P00084,Pedigree / Royal Canin Gravy Wet Food Pouches,Wet Food & Nutrition Toppers,July 2025,20947.22,271,258,13,77.28
+P00084,Pedigree / Royal Canin Gravy Wet Food Pouches,Wet Food & Nutrition Toppers,August 2025,21492.66,278,264,14,77.28
+P00084,Pedigree / Royal Canin Gravy Wet Food Pouches,Wet Food & Nutrition Toppers,September 2025,20787.41,269,256,13,77.28
+P04291,Gnawlers / JerHigh Chicken Chew Treats,Dental Chews & Treats,July 2025,18349.71,279,262,17,65.87
+P04291,Gnawlers / JerHigh Chicken Chew Treats,Dental Chews & Treats,August 2025,21836.5,331,311,20,65.87
+P04291,Gnawlers / JerHigh Chicken Chew Treats,Dental Chews & Treats,September 2025,20836.68,316,297,19,65.87
