@@ -7,7 +7,17 @@
     "best_model": "\u2605 Arth Event-Aware Ridge",
     "table": [
       {
-        "Model": "ARIMA",
+        "Model": "Naive (prev qtr lag)",
+        "RMSE": 32.28,
+        "MAE": 25.85,
+        "MAPE_%": 142.8,
+        "WAPE_%": 40.61,
+        "Bias": 1.59,
+        "Accuracy_%": 59.39,
+        "Fin_Accuracy_%": 97.51
+      },
+      {
+        "Model": "ARIMA(1,1,1)",
         "RMSE": 48.58,
         "MAE": 37.54,
         "MAPE_%": 153.38,
@@ -15,6 +25,16 @@
         "Bias": -5.16,
         "Accuracy_%": 41.02,
         "Fin_Accuracy_%": 91.89
+      },
+      {
+        "Model": "\u2605 Arth Event-Aware Ridge",
+        "RMSE": 56.47,
+        "MAE": 44.36,
+        "MAPE_%": 172.83,
+        "WAPE_%": 69.7,
+        "Bias": -9.52,
+        "Accuracy_%": 30.3,
+        "Fin_Accuracy_%": 85.04
       },
       {
         "Model": "Exp. Smoothing (SES)",
@@ -27,34 +47,14 @@
         "Fin_Accuracy_%": 98.85
       },
       {
-        "Model": "LightGBM Regressor",
-        "RMSE": 57.58,
-        "MAE": 40.96,
-        "MAPE_%": 155.83,
-        "WAPE_%": 64.36,
-        "Bias": -23.06,
-        "Accuracy_%": 35.64,
-        "Fin_Accuracy_%": 63.77
-      },
-      {
-        "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 57.69,
-        "MAE": 40.81,
-        "MAPE_%": 164.73,
-        "WAPE_%": 64.12,
-        "Bias": -23.36,
-        "Accuracy_%": 35.88,
-        "Fin_Accuracy_%": 63.3
-      },
-      {
-        "Model": "Random Forest Regressor",
-        "RMSE": 58.45,
-        "MAE": 41.4,
-        "MAPE_%": 172.15,
-        "WAPE_%": 65.05,
-        "Bias": -23.59,
-        "Accuracy_%": 34.95,
-        "Fin_Accuracy_%": 62.94
+        "Model": "SMA (8w)",
+        "RMSE": 57.62,
+        "MAE": 46.79,
+        "MAPE_%": 188.49,
+        "WAPE_%": 73.51,
+        "Bias": 2.46,
+        "Accuracy_%": 26.49,
+        "Fin_Accuracy_%": 96.14
       },
       {
         "Model": "Holt-Winters (damped)",
@@ -65,36 +65,6 @@
         "Bias": -2.58,
         "Accuracy_%": 19.7,
         "Fin_Accuracy_%": 95.95
-      },
-      {
-        "Model": "SMA (8w)",
-        "RMSE": 63.82,
-        "MAE": 52.93,
-        "MAPE_%": 202.96,
-        "WAPE_%": 83.15,
-        "Bias": 3.45,
-        "Accuracy_%": 16.85,
-        "Fin_Accuracy_%": 94.58
-      },
-      {
-        "Model": "Two-Tier Hierarchical Volume",
-        "RMSE": 69.83,
-        "MAE": 59.25,
-        "MAPE_%": 272.84,
-        "WAPE_%": 93.09,
-        "Bias": 4.09,
-        "Accuracy_%": 6.91,
-        "Fin_Accuracy_%": 93.58
-      },
-      {
-        "Model": "Naive (prev qtr lag)",
-        "RMSE": 73.52,
-        "MAE": 60.67,
-        "MAPE_%": 226.88,
-        "WAPE_%": 95.31,
-        "Bias": -0.89,
-        "Accuracy_%": 4.69,
-        "Fin_Accuracy_%": 98.59
       }
     ]
   },
@@ -103,87 +73,67 @@
     "interval": "Weekly",
     "split": "Monthly Rolling Walk-Forward (4-week sliding windows matching salon review)",
     "best_factor": "Highest Volume Accuracy (100 - WAPE)",
-    "best_model": "SMA (8w) / Periodic Review Baseline",
+    "best_model": "SMA (8w)",
     "table": [
       {
-        "Model": "Holt-Winters (damped)",
-        "RMSE": 16.88,
-        "MAE": 13.41,
-        "MAPE_%": 107.15,
-        "WAPE_%": 39.31,
-        "Bias": -3.15,
-        "Accuracy_%": 60.69,
-        "Fin_Accuracy_%": 90.77
+        "Model": "ARIMA(1,0,1)",
+        "RMSE": 20.48,
+        "MAE": 16.38,
+        "MAPE_%": 127.99,
+        "WAPE_%": 48.75,
+        "Bias": -10.09,
+        "Accuracy_%": 51.25,
+        "Fin_Accuracy_%": 69.99
       },
       {
         "Model": "SMA (8w)",
-        "RMSE": 17.66,
-        "MAE": 13.73,
-        "MAPE_%": 95.3,
-        "WAPE_%": 40.26,
-        "Bias": -4.18,
-        "Accuracy_%": 59.74,
-        "Fin_Accuracy_%": 87.74
+        "RMSE": 20.02,
+        "MAE": 16.62,
+        "MAPE_%": 175.48,
+        "WAPE_%": 49.45,
+        "Bias": -0.41,
+        "Accuracy_%": 50.55,
+        "Fin_Accuracy_%": 98.77
       },
       {
         "Model": "Exp. Smoothing (SES)",
-        "RMSE": 17.45,
-        "MAE": 14.05,
-        "MAPE_%": 103.04,
-        "WAPE_%": 41.19,
-        "Bias": -2.11,
-        "Accuracy_%": 58.81,
-        "Fin_Accuracy_%": 93.8
+        "RMSE": 20.78,
+        "MAE": 17.11,
+        "MAPE_%": 168.03,
+        "WAPE_%": 50.93,
+        "Bias": -1.83,
+        "Accuracy_%": 49.07,
+        "Fin_Accuracy_%": 94.56
       },
       {
-        "Model": "ARIMA",
-        "RMSE": 19.04,
-        "MAE": 14.06,
-        "MAPE_%": 80.68,
-        "WAPE_%": 41.24,
-        "Bias": -10.25,
-        "Accuracy_%": 58.76,
-        "Fin_Accuracy_%": 69.95
-      },
-      {
-        "Model": "Periodic Review (R,s,S)",
-        "RMSE": 18.93,
-        "MAE": 14.09,
-        "MAPE_%": 84.34,
-        "WAPE_%": 41.32,
-        "Bias": -10.12,
-        "Accuracy_%": 58.68,
-        "Fin_Accuracy_%": 70.34
-      },
-      {
-        "Model": "LightGBM Regressor",
-        "RMSE": 18.93,
-        "MAE": 14.09,
-        "MAPE_%": 84.34,
-        "WAPE_%": 41.32,
-        "Bias": -10.12,
-        "Accuracy_%": 58.68,
-        "Fin_Accuracy_%": 70.34
+        "Model": "Holt-Winters (damped)",
+        "RMSE": 21.35,
+        "MAE": 18.38,
+        "MAPE_%": 222.62,
+        "WAPE_%": 54.71,
+        "Bias": 5.14,
+        "Accuracy_%": 45.29,
+        "Fin_Accuracy_%": 84.7
       },
       {
         "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 18.98,
-        "MAE": 14.2,
-        "MAPE_%": 94.17,
-        "WAPE_%": 41.64,
-        "Bias": -9.98,
-        "Accuracy_%": 58.36,
-        "Fin_Accuracy_%": 70.74
+        "RMSE": 24.82,
+        "MAE": 18.73,
+        "MAPE_%": 62.81,
+        "WAPE_%": 55.74,
+        "Bias": -13.45,
+        "Accuracy_%": 44.26,
+        "Fin_Accuracy_%": 59.97
       },
       {
-        "Model": "Naive (prev 4w lag)",
-        "RMSE": 19.02,
-        "MAE": 14.95,
-        "MAPE_%": 55.54,
-        "WAPE_%": 43.84,
-        "Bias": -2.75,
-        "Accuracy_%": 56.16,
-        "Fin_Accuracy_%": 91.93
+        "Model": "Naive (prev qtr lag)",
+        "RMSE": 31.66,
+        "MAE": 27.45,
+        "MAPE_%": 125.15,
+        "WAPE_%": 81.7,
+        "Bias": -8.27,
+        "Accuracy_%": 18.3,
+        "Fin_Accuracy_%": 75.38
       }
     ]
   },
@@ -205,16 +155,6 @@
         "Fin_Accuracy_%": 66.0
       },
       {
-        "Model": "SMA (8w)",
-        "RMSE": 17.84,
-        "MAE": 15.04,
-        "MAPE_%": 132.13,
-        "WAPE_%": 72.11,
-        "Bias": 6.04,
-        "Accuracy_%": 27.89,
-        "Fin_Accuracy_%": 71.02
-      },
-      {
         "Model": "Exp. Smoothing (SES)",
         "RMSE": 17.38,
         "MAE": 15.04,
@@ -223,6 +163,26 @@
         "Bias": 5.89,
         "Accuracy_%": 27.91,
         "Fin_Accuracy_%": 71.75
+      },
+      {
+        "Model": "SMA (8w)",
+        "RMSE": 18.96,
+        "MAE": 15.99,
+        "MAPE_%": 96.21,
+        "WAPE_%": 76.65,
+        "Bias": 3.35,
+        "Accuracy_%": 23.35,
+        "Fin_Accuracy_%": 83.95
+      },
+      {
+        "Model": "\u2605 Arth Event-Aware Ridge",
+        "RMSE": 19.27,
+        "MAE": 16.0,
+        "MAPE_%": 179.07,
+        "WAPE_%": 76.69,
+        "Bias": 8.17,
+        "Accuracy_%": 23.31,
+        "Fin_Accuracy_%": 60.83
       },
       {
         "Model": "Holt-Winters (damped)",
@@ -235,7 +195,17 @@
         "Fin_Accuracy_%": 58.01
       },
       {
-        "Model": "ARIMA",
+        "Model": "Naive (prev qtr lag)",
+        "RMSE": 25.47,
+        "MAE": 20.42,
+        "MAPE_%": 106.34,
+        "WAPE_%": 97.87,
+        "Bias": -3.03,
+        "Accuracy_%": 2.13,
+        "Fin_Accuracy_%": 85.47
+      },
+      {
+        "Model": "ARIMA(1,0,1)",
         "RMSE": 24.59,
         "MAE": 20.46,
         "MAPE_%": 286.13,
@@ -243,36 +213,6 @@
         "Bias": 17.9,
         "Accuracy_%": 1.94,
         "Fin_Accuracy_%": 14.2
-      },
-      {
-        "Model": "Naive (prev qtr lag)",
-        "RMSE": 25.7,
-        "MAE": 21.75,
-        "MAPE_%": 88.17,
-        "WAPE_%": 104.27,
-        "Bias": 4.4,
-        "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 78.89
-      },
-      {
-        "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 26.58,
-        "MAE": 22.36,
-        "MAPE_%": 303.4,
-        "WAPE_%": 107.17,
-        "Bias": 20.89,
-        "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 0.0
-      },
-      {
-        "Model": "LightGBM Regressor",
-        "RMSE": 26.85,
-        "MAE": 22.51,
-        "MAPE_%": 310.93,
-        "WAPE_%": 107.92,
-        "Bias": 20.95,
-        "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 0.0
       }
     ]
   },
@@ -281,87 +221,77 @@
     "interval": "Strictly Daily Resolution",
     "split": "High-Frequency Daily Rolling (14-day horizons matching depot deliveries)",
     "best_factor": "Daily MAPE & Daily WAPE",
-    "best_model": "Daily Naive (t-1) / 7-Day Moving Average",
+    "best_model": "Daily Naive (t-1) / Arth Daily Ridge",
     "table": [
       {
-        "Model": "Daily LightGBM Regressor",
-        "RMSE": 1149.95,
-        "MAE": 655.55,
-        "MAPE_%": 96.44,
-        "WAPE_%": 126.02,
-        "Bias": -216.69,
-        "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 58.35
-      },
-      {
-        "Model": "\u2605 Arth Daily Event-Aware Ridge",
-        "RMSE": 1151.63,
-        "MAE": 659.04,
-        "MAPE_%": 95.93,
-        "WAPE_%": 126.69,
-        "Bias": -213.95,
-        "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 58.87
-      },
-      {
         "Model": "Daily ARIMA(1,0,1)",
-        "RMSE": 1149.94,
-        "MAE": 668.12,
-        "MAPE_%": 100.42,
-        "WAPE_%": 128.43,
-        "Bias": -191.87,
+        "RMSE": 1157.41,
+        "MAE": 677.25,
+        "MAPE_%": 96.5,
+        "WAPE_%": 129.24,
+        "Bias": -195.4,
         "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 63.12
+        "Fin_Accuracy_%": 62.71
       },
       {
         "Model": "Daily Naive (t-1)",
-        "RMSE": 1317.26,
-        "MAE": 694.62,
-        "MAPE_%": 143.06,
-        "WAPE_%": 133.53,
-        "Bias": -235.97,
+        "RMSE": 1247.27,
+        "MAE": 524.02,
+        "MAPE_%": 100.0,
+        "WAPE_%": 100.0,
+        "Bias": -524.02,
         "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 54.64
+        "Fin_Accuracy_%": 0.0
       },
       {
         "Model": "Daily SES",
-        "RMSE": 1156.99,
-        "MAE": 715.86,
-        "MAPE_%": 125.6,
-        "WAPE_%": 137.61,
-        "Bias": -95.62,
+        "RMSE": 1137.81,
+        "MAE": 719.9,
+        "MAPE_%": 115.23,
+        "WAPE_%": 137.38,
+        "Bias": -105.42,
         "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 81.62
+        "Fin_Accuracy_%": 79.88
+      },
+      {
+        "Model": "Daily Holt-Winters (7d)",
+        "RMSE": 1140.61,
+        "MAE": 759.59,
+        "MAPE_%": 125.0,
+        "WAPE_%": 144.95,
+        "Bias": -34.89,
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 93.34
       },
       {
         "Model": "Daily 28-Day Moving Avg",
-        "RMSE": 1133.22,
-        "MAE": 759.58,
-        "MAPE_%": 143.61,
-        "WAPE_%": 146.01,
-        "Bias": -8.24,
+        "RMSE": 1151.03,
+        "MAE": 766.78,
+        "MAPE_%": 133.39,
+        "WAPE_%": 146.33,
+        "Bias": -23.25,
         "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 98.42
+        "Fin_Accuracy_%": 95.56
+      },
+      {
+        "Model": "\u2605 Arth Daily Event-Aware Ridge",
+        "RMSE": 1136.91,
+        "MAE": 809.4,
+        "MAPE_%": 138.16,
+        "WAPE_%": 154.46,
+        "Bias": 57.53,
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 89.02
       },
       {
         "Model": "Daily 7-Day Moving Avg",
-        "RMSE": 1168.04,
-        "MAE": 774.7,
-        "MAPE_%": 143.81,
-        "WAPE_%": 148.92,
-        "Bias": -2.19,
+        "RMSE": 1149.57,
+        "MAE": 911.86,
+        "MAPE_%": 184.03,
+        "WAPE_%": 174.01,
+        "Bias": 255.21,
         "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 99.58
-      },
-      {
-        "Model": "Daily 7-Day Seasonal Naive (t-7)",
-        "RMSE": 1535.97,
-        "MAE": 802.22,
-        "MAPE_%": 222.26,
-        "WAPE_%": 154.21,
-        "Bias": -2.19,
-        "Accuracy_%": 0.0,
-        "Fin_Accuracy_%": 99.58
+        "Fin_Accuracy_%": 51.3
       }
     ]
   },
@@ -370,17 +300,17 @@
     "interval": "Weekly",
     "split": "Monthly Periodic Review Horizon across 4 Quarters",
     "best_factor": "Near-Zero Bias (|Bias| -> 0)",
-    "best_model": "\u2605 Arth Event-Aware Ridge (|Bias| = 0.52)",
+    "best_model": "SMA (8w) / Arth Ridge",
     "table": [
       {
-        "Model": "Naive (prev qtr lag)",
-        "RMSE": 4.69,
-        "MAE": 3.4,
-        "MAPE_%": 226.38,
-        "WAPE_%": 93.08,
-        "Bias": 0.09,
-        "Accuracy_%": 6.92,
-        "Fin_Accuracy_%": 97.66
+        "Model": "SMA (8w)",
+        "RMSE": 3.81,
+        "MAE": 3.0,
+        "MAPE_%": 206.63,
+        "WAPE_%": 81.89,
+        "Bias": 0.11,
+        "Accuracy_%": 18.11,
+        "Fin_Accuracy_%": 96.94
       },
       {
         "Model": "Exp. Smoothing (SES)",
@@ -393,47 +323,7 @@
         "Fin_Accuracy_%": 94.41
       },
       {
-        "Model": "SMA (8w)",
-        "RMSE": 3.68,
-        "MAE": 2.83,
-        "MAPE_%": 178.58,
-        "WAPE_%": 77.29,
-        "Bias": -0.26,
-        "Accuracy_%": 22.71,
-        "Fin_Accuracy_%": 92.77
-      },
-      {
-        "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 3.56,
-        "MAE": 2.84,
-        "MAPE_%": 224.62,
-        "WAPE_%": 77.59,
-        "Bias": 0.61,
-        "Accuracy_%": 22.41,
-        "Fin_Accuracy_%": 83.32
-      },
-      {
-        "Model": "Periodic Review (R, S) Buffer",
-        "RMSE": 3.51,
-        "MAE": 2.82,
-        "MAPE_%": 222.43,
-        "WAPE_%": 77.09,
-        "Bias": 0.63,
-        "Accuracy_%": 22.91,
-        "Fin_Accuracy_%": 82.75
-      },
-      {
-        "Model": "LightGBM Regressor",
-        "RMSE": 3.51,
-        "MAE": 2.82,
-        "MAPE_%": 222.43,
-        "WAPE_%": 77.09,
-        "Bias": 0.63,
-        "Accuracy_%": 22.91,
-        "Fin_Accuracy_%": 82.75
-      },
-      {
-        "Model": "ARIMA",
+        "Model": "ARIMA(1,0,1)",
         "RMSE": 3.52,
         "MAE": 2.85,
         "MAPE_%": 223.1,
@@ -441,6 +331,16 @@
         "Bias": 0.67,
         "Accuracy_%": 21.99,
         "Fin_Accuracy_%": 81.8
+      },
+      {
+        "Model": "\u2605 Arth Event-Aware Ridge",
+        "RMSE": 4.06,
+        "MAE": 3.36,
+        "MAPE_%": 259.96,
+        "WAPE_%": 91.99,
+        "Bias": 0.75,
+        "Accuracy_%": 8.01,
+        "Fin_Accuracy_%": 79.38
       },
       {
         "Model": "Holt-Winters (damped)",
@@ -451,6 +351,16 @@
         "Bias": 0.89,
         "Accuracy_%": 20.78,
         "Fin_Accuracy_%": 75.59
+      },
+      {
+        "Model": "Naive (prev qtr lag)",
+        "RMSE": 6.98,
+        "MAE": 5.43,
+        "MAPE_%": 372.09,
+        "WAPE_%": 148.59,
+        "Bias": 1.06,
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 71.04
       }
     ]
   }
