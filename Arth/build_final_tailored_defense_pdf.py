@@ -5,14 +5,14 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, KeepTogether, HRFlowable
+    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, KeepTogether, HRFlowable, Image
 )
 from reportlab.pdfgen import canvas
 
 warnings.filterwarnings("ignore")
 
 PDF_PATH = r"d:\Desktop\ARTH\Sem-7\TOD310\Project\TOD310_JustDogs_Forecasting_Project\Arth\JustDogs_Top5_Final_Product_Tailored_Defense.pdf"
-JSON_PATH = r"d:\Desktop\ARTH\Sem-7\TOD310\Project\TOD310_JustDogs_Forecasting_Project\Arth\tailored_benchmark_results.json"
+PLOTS_DIR = r"d:\Desktop\ARTH\Sem-7\TOD310\Project\TOD310_JustDogs_Forecasting_Project\Arth\plots"
 
 class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):
@@ -46,12 +46,12 @@ class NumberedCanvas(canvas.Canvas):
 
         self.setStrokeColor(colors.HexColor("#cbd5e1"))
         self.setLineWidth(0.75)
-        self.line(36, 32, 612 - 36, 32)
+        self.line(36, 30, 612 - 36, 30)
         self.setFont("Helvetica", 7.5)
         self.setFillColor(colors.HexColor("#64748b"))
-        self.drawString(36, 22, "Academic & Executive Defense Document | JustDogs Omnichannel Forecasting | Course: TOD310 Predictive Analytics")
+        self.drawString(36, 20, "Academic & Executive Defense Document | JustDogs Omnichannel Forecasting | Course: TOD310 Predictive Analytics")
         page_str = f"Page {self._pageNumber} of {page_count}"
-        self.drawRightString(612 - 36, 22, page_str)
+        self.drawRightString(612 - 36, 20, page_str)
         self.restoreState()
 
 def generate_pdf():
@@ -96,22 +96,22 @@ def generate_pdf():
         'Heading1',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=11,
-        leading=14.5,
+        fontSize=10.5,
+        leading=13.5,
         textColor=colors.HexColor("#0f172a"),
-        spaceBefore=7,
-        spaceAfter=3.5,
+        spaceBefore=6,
+        spaceAfter=3,
         keepWithNext=True
     )
     h2_style = ParagraphStyle(
         'Heading2',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=9,
-        leading=12,
+        fontSize=8.5,
+        leading=11,
         textColor=colors.HexColor("#1e3a8a"),
-        spaceBefore=5,
-        spaceAfter=2.5,
+        spaceBefore=3,
+        spaceAfter=2,
         keepWithNext=True
     )
     body_style = ParagraphStyle(
@@ -119,16 +119,16 @@ def generate_pdf():
         parent=styles['Normal'],
         fontName='Helvetica',
         fontSize=7.2,
-        leading=10,
+        leading=9.8,
         textColor=colors.HexColor("#334155"),
-        spaceAfter=2.5
+        spaceAfter=2
     )
     bullet_style = ParagraphStyle(
         'BulletStyle',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=7.2,
-        leading=10,
+        fontSize=7.0,
+        leading=9.5,
         textColor=colors.HexColor("#334155"),
         leftIndent=10,
         firstLineIndent=-6,
@@ -138,16 +138,16 @@ def generate_pdf():
         'CalloutText',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=7.2,
-        leading=10,
+        fontSize=7.0,
+        leading=9.5,
         textColor=colors.HexColor("#0f172a")
     )
     th_style = ParagraphStyle(
         'TableHeader',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=6.8,
-        leading=8.5,
+        fontSize=6.5,
+        leading=8.0,
         textColor=colors.white,
         alignment=1
     )
@@ -155,8 +155,8 @@ def generate_pdf():
         'TableCell',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=6.8,
-        leading=8.5,
+        fontSize=6.5,
+        leading=8.0,
         textColor=colors.HexColor("#1e293b"),
         alignment=1
     )
@@ -164,8 +164,8 @@ def generate_pdf():
         'TableCellBold',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=6.8,
-        leading=8.5,
+        fontSize=6.5,
+        leading=8.0,
         textColor=colors.HexColor("#047857"),
         alignment=1
     )
@@ -173,8 +173,8 @@ def generate_pdf():
         'TableCellLeft',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=6.8,
-        leading=8.5,
+        fontSize=6.5,
+        leading=8.0,
         textColor=colors.HexColor("#1e293b"),
         alignment=0
     )
@@ -182,19 +182,46 @@ def generate_pdf():
         'TableCellLeftBold',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=6.8,
-        leading=8.5,
+        fontSize=6.5,
+        leading=8.0,
         textColor=colors.HexColor("#047857"),
         alignment=0
+    )
+    forecast_hdr = ParagraphStyle(
+        'ForecastHdr',
+        parent=styles['Normal'],
+        fontName='Helvetica-Bold',
+        fontSize=6.5,
+        leading=8.0,
+        textColor=colors.HexColor("#0f172a"),
+        alignment=1
+    )
+    forecast_val = ParagraphStyle(
+        'ForecastVal',
+        parent=styles['Normal'],
+        fontName='Helvetica',
+        fontSize=6.5,
+        leading=8.0,
+        textColor=colors.HexColor("#1e293b"),
+        alignment=1
+    )
+    forecast_val_bold = ParagraphStyle(
+        'ForecastValBold',
+        parent=styles['Normal'],
+        fontName='Helvetica-Bold',
+        fontSize=6.5,
+        leading=8.0,
+        textColor=colors.HexColor("#047857"),
+        alignment=1
     )
 
     story = []
 
     # ==========================================
-    # PAGE 1: TITLE, META, EXECUTIVE CALLOUT, MASTER MATRIX
+    # PAGE 1: TITLE, META, EXECUTIVE CALLOUT, MASTER MATRIX & TIME INTERVAL RATIONALE
     # ==========================================
     story.append(Paragraph("JUSTDOGS TOP 5 SKUs FORECASTING DEFENSE", title_style))
-    story.append(Paragraph("Product-Tailored Time Intervals, Operational Validation Splits, and Dual Accuracy Evaluation", subtitle_style))
+    story.append(Paragraph("Product-Tailored Time Intervals, Operational Validation Splits, and Out-of-Sample Forecast Trends", subtitle_style))
 
     meta_table = Table([[
         Paragraph("<b>Candidate:</b> Arth Patel | <b>Course:</b> TOD310 – Predictive Analytics | <b>Faculty:</b> Prof. Amit", meta_style),
@@ -226,7 +253,9 @@ def generate_pdf():
         "and <b>Net Financial Accuracy (1 - |sum error| / sum actual)</b> across all models. While Financial Accuracy evaluates net "
         "quarterly cash flow, <b>model selection is strictly guided by each SKU's designated operational risk factor</b>: "
         "<b>RMSE</b> for bulk food pallet risks, <b>WAPE/Volume Accuracy</b> for salon appointments, <b>MAE</b> for Rs. 12.6k crates, "
-        "<b>Daily MAPE/WAPE</b> for grocery pouches, and <b>Near-Zero Bias</b> for impulse treats."
+        "<b>Daily MAPE/WAPE</b> for grocery pouches, and <b>Near-Zero Bias</b> for impulse treats.<br/>"
+        "<b>4. Out-of-Sample Trend Line Projections:</b> Each product features a continuous trend line forecast extending into missing/future "
+        "months (June 1 through September 30, 2025) equipped with 80% confidence bands and Indian calendar event adjustments."
     )
     t_call = Table([[Paragraph(exec_summary, callout_style)]], colWidths=[540])
     t_call.setStyle(TableStyle([
@@ -238,7 +267,7 @@ def generate_pdf():
         ('BOTTOMPADDING', (0,0), (-1,-1), 4),
     ]))
     story.append(t_call)
-    story.append(Spacer(1, 5))
+    story.append(Spacer(1, 4))
 
     story.append(Paragraph("1. Master Product-Tailored Decision Matrix", h1_style))
     m_headers = ["SKU / Product", "Time Interval", "Train/Test Division", "Best Operational Factor", "Empirical Champion", "Key Factor Score", "Fin Acc (%)"]
@@ -299,14 +328,14 @@ def generate_pdf():
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#0f172a")),
         ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#cbd5e1")),
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
-        ('TOPPADDING', (0,0), (-1,-1), 2.5),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
+        ('TOPPADDING', (0,0), (-1,-1), 2.0),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
         ('LEFTPADDING', (0,0), (-1,-1), 3),
         ('RIGHTPADDING', (0,0), (-1,-1), 3),
         ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor("#f8fafc")]),
     ]))
     story.append(matrix_table)
-    story.append(Spacer(1, 5))
+    story.append(Spacer(1, 4))
 
     story.append(Paragraph("2. Dedicated Time Interval Selection Rationale ('Why' vs. 'Why NOT Others')", h1_style))
     int_rationales = [
@@ -347,16 +376,31 @@ def generate_pdf():
     for r in fac_rationales:
         story.append(Paragraph(f"• {r}", bullet_style))
 
+    story.append(Spacer(1, 4))
+    story.append(Paragraph("5. Mathematical Formulation of Dual-Accuracy Metrics", h1_style))
+    formulas = [
+        "<b>Volume Accuracy (%)</b> = max(0, 100 - WAPE) = max(0, 100 - [sum(|y_t - y_hat_t|) / sum(|y_t|)] * 100). Measures exact unit fulfillment accuracy.",
+        "<b>Financial Accuracy (%)</b> = max(0, 100 * [1 - |sum(y_t) - sum(y_hat_t)| / sum(y_t)]). Measures net corporate revenue tracking without timing penalties.",
+        "<b>Root Mean Squared Error (RMSE)</b> = sqrt( (1/n) * sum((y_t - y_hat_t)^2) ). Quadratic loss penalizing large stockout or warehouse overflow errors.",
+        "<b>Mean Absolute Error (MAE)</b> = (1/n) * sum(|y_t - y_hat_t|). Linear loss measuring average physical unit deviation for capital budgeting.",
+        "<b>Forecast Bias</b> = (1/n) * sum(y_hat_t - y_t). Signed deviation indicating structural over-forecasting (positive) or under-forecasting (negative)."
+    ]
+    for f in formulas:
+        story.append(Paragraph(f"• {f}", bullet_style))
+
     story.append(PageBreak())
 
     # ==========================================
-    # HELPER FOR SECTION 5 TABLES
+    # HELPER FOR PRODUCT DEDICATED PAGE
     # ==========================================
-    def render_bench_table(pid, pname, meta_desc, interval_lbl, factor_lbl, headers, data_rows, analysis_text):
-        tbl_elements = []
-        header_text = f"<b>{pid}: {pname}</b> | <i>{meta_desc}</i><br/><b>Interval:</b> {interval_lbl} | <b>Primary Selection Factor:</b> {factor_lbl}"
-        tbl_elements.append(Paragraph(header_text, h2_style))
+    def build_product_page(pid, pname, meta_desc, interval_lbl, factor_lbl, headers, data_rows,
+                           analysis_text, plot_filename, forecast_records, rec_notes):
+        page_elements = []
+        header_text = f"<b>{pid}: {pname}</b> | <i>{meta_desc}</i><br/><b>Interval:</b> {interval_lbl} | <b>Operational Split:</b> {meta_desc.split('|')[0].strip()} | <b>Primary Selection Factor:</b> {factor_lbl}"
+        page_elements.append(Paragraph(header_text, h2_style))
+        page_elements.append(Spacer(1, 2))
 
+        # Benchmark Scorecard Table
         t_data = [[Paragraph(f"<b>{h}</b>", th_style) for h in headers]]
         for r in data_rows:
             rank = r[0]
@@ -379,30 +423,55 @@ def generate_pdf():
             ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#0f172a")),
             ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#cbd5e1")),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
-            ('TOPPADDING', (0,0), (-1,-1), 2.2),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 2.2),
+            ('TOPPADDING', (0,0), (-1,-1), 1.8),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1.8),
             ('LEFTPADDING', (0,0), (-1,-1), 3),
             ('RIGHTPADDING', (0,0), (-1,-1), 3),
             ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor("#f8fafc")]),
         ]))
-        tbl_elements.append(tbl)
-        tbl_elements.append(Spacer(1, 2.5))
-        tbl_elements.append(Paragraph(analysis_text, body_style))
-        tbl_elements.append(Spacer(1, 5))
-        return tbl_elements
+        page_elements.append(tbl)
+        page_elements.append(Spacer(1, 2))
+
+        page_elements.append(Paragraph(analysis_text, body_style))
+        page_elements.append(Spacer(1, 2))
+
+        # Trend Line Graph Image
+        plot_path = os.path.join(PLOTS_DIR, plot_filename)
+        if os.path.exists(plot_path):
+            img = Image(plot_path, width=530, height=210)
+            img.hAlign = 'CENTER'
+            page_elements.append(img)
+            page_elements.append(Spacer(1, 2))
+
+        # Monthly Prediction Box
+        f_headers = ["Forecast Month", "Predicted Revenue (INR)", "Predicted Physical Demand", "Unit ASP (INR)", "Operational Procurement Directive"]
+        f_data = [[Paragraph(f"<b>{h}</b>", th_style) for h in f_headers]]
+        for rec, note in zip(forecast_records, rec_notes):
+            f_data.append([
+                Paragraph(f"<b>{rec['month']}</b>", forecast_hdr),
+                Paragraph(f"<b>Rs. {rec['sales']:,.2f}</b>", forecast_val_bold),
+                Paragraph(f"<b>{rec['units']} units</b>", forecast_val_bold),
+                Paragraph(f"Rs. {rec['asp']:,.2f}", forecast_val),
+                Paragraph(note, td_left)
+            ])
+        f_table = Table(f_data, colWidths=[70, 95, 85, 60, 230])
+        f_table.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#1e3a8a")),
+            ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#cbd5e1")),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+            ('TOPPADDING', (0,0), (-1,-1), 1.6),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1.6),
+            ('LEFTPADDING', (0,0), (-1,-1), 3),
+            ('RIGHTPADDING', (0,0), (-1,-1), 3),
+            ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor("#f1f5f9")]),
+        ]))
+        page_elements.append(f_table)
+        page_elements.append(PageBreak())
+        return page_elements
 
     # ==========================================
-    # PAGE 3: SCORECARDS FOR P04606 & P02065
+    # PAGE 3: SKU 1 - P04606 (10kg Food)
     # ==========================================
-    story.append(Paragraph("5. Empirical Tournament Scorecards (Ranked by Primary Factor; Includes Fin Acc)", h1_style))
-    story.append(Paragraph(
-        "Each table below benchmarks all competing models under each product's <b>scientifically tailored interval and split</b>. "
-        "<b>Rankings are sorted strictly by each SKU's designated operational factor</b>, while <b>Fin Acc (%)</b> is reported "
-        "to evaluate macro financial revenue tracking alongside operational fulfillment.",
-        body_style
-    ))
-
-    # 1. P04606
     p1_headers = ["Rank", "Model", "RMSE (Rs.k) [Best]", "Bias (Rs.k)", "MAE (Rs.k)", "WAPE (%)", "Vol Acc (%)", "Fin Acc (%)"]
     p1_data = [
         [1, "Naive (prev qtr lag)", "32.28", "+1.59", "25.85", "40.61%", "59.39%", "97.51%"],
@@ -417,10 +486,26 @@ def generate_pdf():
         "(RMSE 48.5k–56.5k, Fin Acc 85%–92%). While Naive reflects low error on calmer quarters, Arth Ridge actively captures "
         "the 4.3× Diwali festival surge via explicit festival dummies, preventing acute stockouts."
     )
-    story.extend(render_bench_table("P04606", "Pedigree 10kg Premium Food", "Bulk Dry Nutrition | ASP Rs. 2,202.66",
-                                    "Weekly | 4-Quarter Rollout", "Lowest RMSE & Low Bias", p1_headers, p1_data, p1_text))
+    p1_f_recs = [
+        {"month": "June 2025", "sales": 188353.19, "units": 86, "asp": 2202.66},
+        {"month": "July 2025", "sales": 220039.53, "units": 100, "asp": 2202.66},
+        {"month": "August 2025", "sales": 266306.39, "units": 121, "asp": 2202.66},
+        {"month": "September 2025", "sales": 283588.16, "units": 129, "asp": 2202.66},
+    ]
+    p1_notes = [
+        "Baseline post-summer demand; maintain standard 20-bag buffer stock in central hub.",
+        "Early monsoon uptick; increase factory PO by 15% to prepare for regional freight delays.",
+        "Raksha Bandhan & Dog Day surge window; ramp weekly depot shipments to 30 bags/week.",
+        "Pre-Diwali bulk replenishment; lock 35 bags/week manufacturing order to prevent festival stockouts."
+    ]
+    story.extend(build_product_page("P04606", "Royal Canin / Pedigree 10kg Premium Food",
+                                    "Bulk Dry Nutrition | 4-Quarter Rollout", "Weekly (W-SUN)",
+                                    "Lowest RMSE & Low Bias", p1_headers, p1_data, p1_text,
+                                    "forecast_trend_P04606.png", p1_f_recs, p1_notes))
 
-    # 2. P02065
+    # ==========================================
+    # PAGE 4: SKU 2 - P02065 (Grooming Hygiene)
+    # ==========================================
     p2_headers = ["Rank", "Model", "Vol Acc (%) [Best]", "WAPE (%) [Best]", "RMSE (Rs.k)", "MAE (Rs.k)", "Bias (Rs.k)", "Fin Acc (%)"]
     p2_data = [
         [1, "ARIMA(1,0,1)", "51.25%", "48.75%", "20.48", "16.38", "-10.09", "69.99%"],
@@ -435,15 +520,26 @@ def generate_pdf():
         "98.8% Financial Accuracy. Because weekly hygiene demand is strictly stationary (ADF p = 0.0001), moving averages and "
         "simple autoregressive models deliver optimal salon throughput without overfitting."
     )
-    story.extend(render_bench_table("P02065", "Himalaya / Bio-Groom Hygiene", "Grooming Consumable | ASP Rs. 492.35",
-                                    "Weekly | Monthly Sliding Folds", "Highest Volume Accuracy (100 - WAPE)", p2_headers, p2_data, p2_text))
-
-    story.append(PageBreak())
+    p2_f_recs = [
+        {"month": "June 2025", "sales": 181642.18, "units": 369, "asp": 492.35},
+        {"month": "July 2025", "sales": 185317.42, "units": 376, "asp": 492.35},
+        {"month": "August 2025", "sales": 186602.34, "units": 379, "asp": 492.35},
+        {"month": "September 2025", "sales": 179404.45, "units": 364, "asp": 492.35},
+    ]
+    p2_notes = [
+        "Stable baseline consumption; issue standard monthly salon stock requisition of 370 bottles.",
+        "Monsoon tick & flea preventative surge; dispatch 95 bottles weekly to flagship store salons.",
+        "Peak grooming salon bookings; maintain continuous reorder point of 40 bottles per store.",
+        "Post-monsoon grooming normalization; align inventory replenishment strictly to 85 bottles/week."
+    ]
+    story.extend(build_product_page("P02065", "Himalaya / Bio-Groom Grooming & Hygiene",
+                                    "Grooming Consumable | Monthly Sliding Folds", "Weekly (W-SUN)",
+                                    "Highest Volume Accuracy (100 - WAPE)", p2_headers, p2_data, p2_text,
+                                    "forecast_trend_P02065.png", p2_f_recs, p2_notes))
 
     # ==========================================
-    # PAGE 4: SCORECARDS FOR P01032 & P00084
+    # PAGE 5: SKU 3 - P01032 (Luxury Bedding)
     # ==========================================
-    # 3. P01032
     p3_headers = ["Rank", "Model", "MAE (Rs.k) [Best]", "Bias (Rs.k)", "RMSE (Rs.k)", "WAPE (%)", "Vol Acc (%)", "Fin Acc (%)"]
     p3_data = [
         [1, "Croston / SBA Intermittent", "15.03", "+7.09", "17.40", "72.07%", "27.93%", "66.00%"],
@@ -459,10 +555,26 @@ def generate_pdf():
         "with MAE ~15.0k–16.0k and solid Financial Accuracy (60.8%–71.8%). By capturing monthly salary payday surges across every quarter "
         "and dampening intermittent noise, dead capital risk is minimized."
     )
-    story.extend(render_bench_table("P01032", "Luxury Bedding / Travel Crates", "Capital Luxury Goods | ASP Rs. 12,654.93",
-                                    "Weekly | Cumulative Lead-Time", "Lowest MAE (Physical Units / Rs.)", p3_headers, p3_data, p3_text))
+    p3_f_recs = [
+        {"month": "June 2025", "sales": 81424.50, "units": 6, "asp": 12654.93},
+        {"month": "July 2025", "sales": 77330.17, "units": 6, "asp": 12654.93},
+        {"month": "August 2025", "sales": 76357.13, "units": 6, "asp": 12654.93},
+        {"month": "September 2025", "sales": 75123.74, "units": 6, "asp": 12654.93},
+    ]
+    p3_notes = [
+        "Enforce strict 6-unit monthly cap; hold 2 units at hub warehouse and 4 units across flagship stores.",
+        "Payday surge replenishment (28th–3rd); reorder 1-2 units only upon verified omnichannel customer checkout.",
+        "Monsoon pet travel crate promotions; maintain safety buffer of 2 crates to prevent Rs. 12.6k dead stock.",
+        "Pre-Diwali luxury gifting prep; confirm lead-time order of 6 units with European crate importer."
+    ]
+    story.extend(build_product_page("P01032", "Luxury Bedding / European Travel Crates",
+                                    "Capital Luxury Goods | Cumulative Lead-Time", "Weekly (Lead-Time Group)",
+                                    "Lowest MAE (Physical Units / Rs.)", p3_headers, p3_data, p3_text,
+                                    "forecast_trend_P01032.png", p3_f_recs, p3_notes))
 
-    # 4. P00084 (DAILY)
+    # ==========================================
+    # PAGE 6: SKU 4 - P00084 (Wet Food Gravy)
+    # ==========================================
     p4_headers = ["Rank", "Model (Evaluated on DAILY)", "Daily MAPE [Best]", "Daily WAPE", "Daily RMSE (Rs.)", "Daily MAE (Rs.)", "Daily Bias (Rs.)", "Fin Acc (%)"]
     p4_data = [
         [1, "Daily ARIMA(1,0,1)", "96.50%", "129.24%", "1,157.41", "677.25", "-195.40", "62.71%"],
@@ -478,15 +590,26 @@ def generate_pdf():
         "accuracy. Notably, Arth Daily Ridge achieves the <b>lowest Daily RMSE (1,136.91 Rs.)</b> and <b>89.02% Financial Accuracy</b>, "
         "providing reliable daily shelf replenishment without collapsing on zero-sales days."
     )
-    story.extend(render_bench_table("P00084", "Pedigree / Whiskas Wet Food Gravy", "FMCG Daily Pantry Staple | ASP Rs. 74.15",
-                                    "Strictly Daily | 14-Day Rolling Folds", "Lowest Daily MAPE & WAPE", p4_headers, p4_data, p4_text))
-
-    story.append(PageBreak())
+    p4_f_recs = [
+        {"month": "June 2025", "sales": 19693.26, "units": 266, "asp": 74.15},
+        {"month": "July 2025", "sales": 20599.26, "units": 278, "asp": 74.15},
+        {"month": "August 2025", "sales": 21202.80, "units": 286, "asp": 74.15},
+        {"month": "September 2025", "sales": 20537.36, "units": 277, "asp": 74.15},
+    ]
+    p4_notes = [
+        "Continuous daily shelf replenishment (~9 pouches/day); restock front shelves every morning from backroom.",
+        "Rainy season pet appetite variations; dispatch 65 pouches weekly per store cluster.",
+        "Rakhi & Dog Day festive bundle prep; increase daily backroom buffer from 15 to 25 pouches.",
+        "End of monsoon stable velocity; maintain daily automated reorder triggers at depot."
+    ]
+    story.extend(build_product_page("P00084", "Pedigree / Whiskas Wet Food Gravy",
+                                    "FMCG Daily Pantry Staple | 14-Day Rolling Folds", "STRICTLY DAILY",
+                                    "Lowest Daily MAPE & WAPE", p4_headers, p4_data, p4_text,
+                                    "forecast_trend_P00084.png", p4_f_recs, p4_notes))
 
     # ==========================================
-    # PAGE 5: SCORECARD FOR P04291 & VIVA DEFENSE GUIDE
+    # PAGE 7: SKU 5 - P04291 (Chew Treats)
     # ==========================================
-    # 5. P04291
     p5_headers = ["Rank", "Model", "|Bias| (Rs.k) [Best]", "Raw Bias (Rs.k)", "RMSE (Rs.k)", "MAE (Rs.k)", "Vol Acc (%)", "Fin Acc (%)"]
     p5_data = [
         [1, "SMA (8w)", "0.11", "+0.11", "3.81", "3.00", "18.11%", "96.94%"],
@@ -501,12 +624,138 @@ def generate_pdf():
         "Financial Accuracy. On front-counter chew treats (ASP Rs. 64), maintaining minimal bias ensures glass impulse display jars "
         "never sit empty while keeping retail margin intact."
     )
-    story.extend(render_bench_table("P04291", "Barkbone Rawhide Chew Treats", "Front-Counter Impulse | ASP Rs. 64.08",
-                                    "Weekly | Monthly Periodic Review", "Near-Zero Bias (|Bias| -> 0)", p5_headers, p5_data, p5_text))
+    p5_f_recs = [
+        {"month": "June 2025", "sales": 18341.30, "units": 286, "asp": 64.08},
+        {"month": "July 2025", "sales": 21154.52, "units": 330, "asp": 64.08},
+        {"month": "August 2025", "sales": 20544.90, "units": 321, "asp": 64.08},
+        {"month": "September 2025", "sales": 20363.41, "units": 318, "asp": 64.08},
+    ]
+    p5_notes = [
+        "Checkout impulse jar replenishment; maintain 70 sticks weekly per checkout register jar.",
+        "Monsoon indoor pet boredom chewing; increase checkout jar top-up to 80 sticks weekly.",
+        "International Dog Day treats push; place secondary promo display bowl at billing counter.",
+        "Post-festival stabilization; return to standard order-up-to level S of 75 sticks per register."
+    ]
+    story.extend(build_product_page("P04291", "Barkbone Rawhide Chicken Chew Treats",
+                                    "Front-Counter Impulse | Monthly Periodic Review", "Weekly (W-SUN)",
+                                    "Near-Zero Bias (|Bias| -> 0)", p5_headers, p5_data, p5_text,
+                                    "forecast_trend_P04291.png", p5_f_recs, p5_notes))
 
+    # ==========================================
+    # PAGE 8: MASTER CONSOLIDATED 5-PANEL DASHBOARD
+    # ==========================================
+    story.append(Paragraph("6. Consolidated Master Trend Line Dashboard (June – September 2025)", h1_style))
+    story.append(Paragraph(
+        "The multi-panel comparative visualization below displays the continuous out-of-sample sales trend lines across all 5 merchandise "
+        "categories generated strictly with their designated champion models. Each panel showcases historical data transition, 80% forecast "
+        "confidence intervals, and major Indian calendar events (Raksha Bandhan, International Dog Day, and Salary Paydays).",
+        body_style
+    ))
+    story.append(Spacer(1, 3))
+
+    master_plot = os.path.join(PLOTS_DIR, "forecast_trend_top5_products.png")
+    if os.path.exists(master_plot):
+        img_master = Image(master_plot, width=520, height=620)
+        img_master.hAlign = 'CENTER'
+        story.append(img_master)
+
+    story.append(PageBreak())
+
+    # ==========================================
+    # PAGE 9: CONSOLIDATED FORECAST SUMMARY TABLE & VIVA DEFENSE GUIDE
+    # ==========================================
+    story.append(Paragraph("7. Master Out-of-Sample Monthly Demand Forecast Summary (INR & Physical Units)", h1_style))
+    story.append(Paragraph(
+        "Consolidated quarterly demand and financial revenue projections covering all missing/asked months (June 1 – September 30, 2025). "
+        "Physical units are derived using audited product unit ASPs.",
+        body_style
+    ))
+    story.append(Spacer(1, 2))
+
+    summary_headers = ["SKU / Product", "Champion Model", "June 2025", "July 2025", "August 2025", "September 2025", "Total Q3 Revenue", "Total Units"]
+    summary_data = [[Paragraph(f"<b>{h}</b>", th_style) for h in summary_headers]]
+
+    master_table_rows = [
+        [
+            Paragraph("<b>P04606</b><br/>10kg Food", td_left),
+            Paragraph("★ Arth Event Ridge", td_left_bold),
+            Paragraph("Rs. 1,88,353<br/>(86 units)", td_style),
+            Paragraph("Rs. 2,20,040<br/>(100 units)", td_style),
+            Paragraph("Rs. 2,66,306<br/>(121 units)", td_bold),
+            Paragraph("Rs. 2,83,588<br/>(129 units)", td_bold),
+            Paragraph("<b>Rs. 9,58,287</b>", td_bold),
+            Paragraph("<b>436 units</b>", td_bold)
+        ],
+        [
+            Paragraph("<b>P02065</b><br/>Hygiene", td_left),
+            Paragraph("SMA (8w)", td_left_bold),
+            Paragraph("Rs. 1,81,642<br/>(369 units)", td_style),
+            Paragraph("Rs. 1,85,317<br/>(376 units)", td_style),
+            Paragraph("Rs. 1,86,602<br/>(379 units)", td_style),
+            Paragraph("Rs. 1,79,404<br/>(364 units)", td_style),
+            Paragraph("<b>Rs. 7,32,966</b>", td_bold),
+            Paragraph("<b>1,488 units</b>", td_bold)
+        ],
+        [
+            Paragraph("<b>P01032</b><br/>Luxury Beds", td_left),
+            Paragraph("★ Arth Event Ridge", td_left_bold),
+            Paragraph("Rs. 81,425<br/>(6 units)", td_style),
+            Paragraph("Rs. 77,330<br/>(6 units)", td_style),
+            Paragraph("Rs. 76,357<br/>(6 units)", td_style),
+            Paragraph("Rs. 75,124<br/>(6 units)", td_style),
+            Paragraph("<b>Rs. 3,10,236</b>", td_bold),
+            Paragraph("<b>24 units</b>", td_bold)
+        ],
+        [
+            Paragraph("<b>P00084</b><br/>Wet Gravy", td_left),
+            Paragraph("★ Arth Daily Ridge", td_left_bold),
+            Paragraph("Rs. 19,693<br/>(266 units)", td_style),
+            Paragraph("Rs. 20,599<br/>(278 units)", td_style),
+            Paragraph("Rs. 21,203<br/>(286 units)", td_style),
+            Paragraph("Rs. 20,537<br/>(277 units)", td_style),
+            Paragraph("<b>Rs. 82,033</b>", td_bold),
+            Paragraph("<b>1,107 units</b>", td_bold)
+        ],
+        [
+            Paragraph("<b>P04291</b><br/>Chew Treats", td_left),
+            Paragraph("SMA (8w)", td_left_bold),
+            Paragraph("Rs. 18,341<br/>(286 units)", td_style),
+            Paragraph("Rs. 21,155<br/>(330 units)", td_style),
+            Paragraph("Rs. 20,545<br/>(321 units)", td_style),
+            Paragraph("Rs. 20,363<br/>(318 units)", td_style),
+            Paragraph("<b>Rs. 80,404</b>", td_bold),
+            Paragraph("<b>1,255 units</b>", td_bold)
+        ],
+        [
+            Paragraph("<b>TOTAL OMNICHANNEL PORTFOLIO</b>", td_left_bold),
+            Paragraph("<b>Ensemble Champions</b>", td_left_bold),
+            Paragraph("<b>Rs. 4,89,455</b><br/>(1,013 units)", td_bold),
+            Paragraph("<b>Rs. 5,24,441</b><br/>(1,090 units)", td_bold),
+            Paragraph("<b>Rs. 5,71,013</b><br/>(1,113 units)", td_bold),
+            Paragraph("<b>Rs. 5,79,017</b><br/>(1,094 units)", td_bold),
+            Paragraph("<b>Rs. 21,63,926</b>", td_bold),
+            Paragraph("<b>4,310 units</b>", td_bold)
+        ]
+    ]
+    for r in master_table_rows:
+        summary_data.append(r)
+
+    t_summary = Table(summary_data, colWidths=[65, 95, 63, 63, 63, 63, 68, 60])
+    t_summary.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#0f172a")),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.HexColor("#cbd5e1")),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ('TOPPADDING', (0,0), (-1,-1), 2.0),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+        ('LEFTPADDING', (0,0), (-1,-1), 2.5),
+        ('RIGHTPADDING', (0,0), (-1,-1), 2.5),
+        ('ROWBACKGROUNDS', (0,1), (-1,-2), [colors.white, colors.HexColor("#f8fafc")]),
+        ('BACKGROUND', (0,-1), (-1,-1), colors.HexColor("#e2e8f0")),
+    ]))
+    story.append(t_summary)
     story.append(Spacer(1, 4))
-    story.append(Paragraph("6. Academic Viva Defense Guide: Professor Amit Question Defense", h1_style))
 
+    story.append(Paragraph("8. Academic Viva Defense Guide: Professor Amit Question Defense", h1_style))
     qa_list = [
         ("Q1: Why did you not use a single, unified forecasting model across all 5 SKUs?",
          "<b>Defense:</b> The 'No Free Lunch Theorem' (Wolpert & Macready) applies directly to supply chain forecasting. "
@@ -540,11 +789,11 @@ def generate_pdf():
         q_box = [
             Paragraph(f"<b>{q}</b>", h2_style),
             Paragraph(a, body_style),
-            Spacer(1, 2)
+            Spacer(1, 1.5)
         ]
         story.append(KeepTogether(q_box))
 
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
     repo_box = (
         "<b>DATA & CODE REPRODUCIBILITY NOTICE:</b> "
         "All underlying scripts, empirical evaluation logs, and PDF generation code are version-controlled in the official "
@@ -555,15 +804,15 @@ def generate_pdf():
     t_repo.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#f8fafc")),
         ('BOX', (0,0), (-1,-1), 1, colors.HexColor("#cbd5e1")),
-        ('LEFTPADDING', (0,0), (-1,-1), 6),
-        ('RIGHTPADDING', (0,0), (-1,-1), 6),
-        ('TOPPADDING', (0,0), (-1,-1), 4),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 4),
+        ('LEFTPADDING', (0,0), (-1,-1), 5),
+        ('RIGHTPADDING', (0,0), (-1,-1), 5),
+        ('TOPPADDING', (0,0), (-1,-1), 3),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 3),
     ]))
     story.append(t_repo)
 
     doc.build(story, canvasmaker=NumberedCanvas)
-    print(f"[+] Successfully generated Product-Tailored Defense PDF with Fin Accuracy: {PDF_PATH}")
+    print(f"[+] Successfully generated Product-Tailored Defense PDF with Fin Accuracy and Trend Graphs: {PDF_PATH}")
 
 if __name__ == '__main__':
     generate_pdf()
