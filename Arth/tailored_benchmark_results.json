@@ -8,84 +8,93 @@
     "table": [
       {
         "Model": "ARIMA",
-        "RMSE": 48385.03,
-        "MAE": 37440.52,
-        "MAPE_%": 153.36,
-        "WAPE_%": 58.82,
-        "Bias": -4943.37,
-        "Accuracy_%": 41.18
+        "RMSE": 48.58,
+        "MAE": 37.54,
+        "MAPE_%": 153.38,
+        "WAPE_%": 58.98,
+        "Bias": -5.16,
+        "Accuracy_%": 41.02,
+        "Fin_Accuracy_%": 91.89
       },
       {
         "Model": "Exp. Smoothing (SES)",
-        "RMSE": 57138.93,
-        "MAE": 46139.21,
+        "RMSE": 57.14,
+        "MAE": 46.14,
         "MAPE_%": 185.91,
         "WAPE_%": 72.49,
-        "Bias": -729.64,
-        "Accuracy_%": 27.51
+        "Bias": -0.73,
+        "Accuracy_%": 27.51,
+        "Fin_Accuracy_%": 98.85
       },
       {
         "Model": "LightGBM Regressor",
-        "RMSE": 57584.58,
-        "MAE": 40962.62,
+        "RMSE": 57.58,
+        "MAE": 40.96,
         "MAPE_%": 155.83,
         "WAPE_%": 64.36,
-        "Bias": -23061.47,
-        "Accuracy_%": 35.64
+        "Bias": -23.06,
+        "Accuracy_%": 35.64,
+        "Fin_Accuracy_%": 63.77
       },
       {
         "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 57689.24,
-        "MAE": 40811.03,
+        "RMSE": 57.69,
+        "MAE": 40.81,
         "MAPE_%": 164.73,
         "WAPE_%": 64.12,
-        "Bias": -23360.39,
-        "Accuracy_%": 35.88
+        "Bias": -23.36,
+        "Accuracy_%": 35.88,
+        "Fin_Accuracy_%": 63.3
       },
       {
         "Model": "Random Forest Regressor",
-        "RMSE": 58452.64,
-        "MAE": 41403.86,
+        "RMSE": 58.45,
+        "MAE": 41.4,
         "MAPE_%": 172.15,
         "WAPE_%": 65.05,
-        "Bias": -23586.03,
-        "Accuracy_%": 34.95
+        "Bias": -23.59,
+        "Accuracy_%": 34.95,
+        "Fin_Accuracy_%": 62.94
       },
       {
         "Model": "Holt-Winters (damped)",
-        "RMSE": 63505.43,
-        "MAE": 51109.66,
-        "MAPE_%": 187.45,
+        "RMSE": 63.55,
+        "MAE": 51.11,
+        "MAPE_%": 187.15,
         "WAPE_%": 80.3,
-        "Bias": -2477.92,
-        "Accuracy_%": 19.7
+        "Bias": -2.58,
+        "Accuracy_%": 19.7,
+        "Fin_Accuracy_%": 95.95
       },
       {
         "Model": "SMA (8w)",
-        "RMSE": 63824.65,
-        "MAE": 52925.73,
+        "RMSE": 63.82,
+        "MAE": 52.93,
         "MAPE_%": 202.96,
         "WAPE_%": 83.15,
-        "Bias": 3447.09,
-        "Accuracy_%": 16.85
+        "Bias": 3.45,
+        "Accuracy_%": 16.85,
+        "Fin_Accuracy_%": 94.58
       },
       {
         "Model": "Two-Tier Hierarchical Volume",
-        "RMSE": 69830.99,
-        "MAE": 59251.33,
+        "RMSE": 69.83,
+        "MAE": 59.25,
         "MAPE_%": 272.84,
         "WAPE_%": 93.09,
-        "Bias": 4085.25,
-        "Accuracy_%": 6.91
+        "Bias": 4.09,
+        "Accuracy_%": 6.91,
+        "Fin_Accuracy_%": 93.58
       },
       {
         "Model": "Naive (prev qtr lag)",
-        "RMSE": 73522.67,
-        "MAE": 60665.25,
+        "RMSE": 73.52,
+        "MAE": 60.67,
         "MAPE_%": 226.88,
         "WAPE_%": 95.31,
-        "Bias": -894.77,
-        "Accuracy_%": 4.69
+        "Bias": -0.89,
+        "Accuracy_%": 4.69,
+        "Fin_Accuracy_%": 98.59
       }
     ]
   },
@@ -98,75 +107,83 @@
     "table": [
       {
         "Model": "Holt-Winters (damped)",
-        "RMSE": 16805.92,
-        "MAE": 13118.07,
-        "MAPE_%": 106.68,
-        "WAPE_%": 38.46,
-        "Bias": -4191.64,
-        "Accuracy_%": 61.54
+        "RMSE": 16.88,
+        "MAE": 13.41,
+        "MAPE_%": 107.15,
+        "WAPE_%": 39.31,
+        "Bias": -3.15,
+        "Accuracy_%": 60.69,
+        "Fin_Accuracy_%": 90.77
       },
       {
         "Model": "SMA (8w)",
-        "RMSE": 17657.21,
-        "MAE": 13732.19,
+        "RMSE": 17.66,
+        "MAE": 13.73,
         "MAPE_%": 95.3,
         "WAPE_%": 40.26,
-        "Bias": -4181.8,
-        "Accuracy_%": 59.74
-      },
-      {
-        "Model": "ARIMA",
-        "RMSE": 18653.14,
-        "MAE": 13748.46,
-        "MAPE_%": 83.32,
-        "WAPE_%": 40.31,
-        "Bias": -9720.57,
-        "Accuracy_%": 59.69
+        "Bias": -4.18,
+        "Accuracy_%": 59.74,
+        "Fin_Accuracy_%": 87.74
       },
       {
         "Model": "Exp. Smoothing (SES)",
-        "RMSE": 17453.79,
-        "MAE": 14047.68,
+        "RMSE": 17.45,
+        "MAE": 14.05,
         "MAPE_%": 103.04,
         "WAPE_%": 41.19,
-        "Bias": -2113.75,
-        "Accuracy_%": 58.81
+        "Bias": -2.11,
+        "Accuracy_%": 58.81,
+        "Fin_Accuracy_%": 93.8
+      },
+      {
+        "Model": "ARIMA",
+        "RMSE": 19.04,
+        "MAE": 14.06,
+        "MAPE_%": 80.68,
+        "WAPE_%": 41.24,
+        "Bias": -10.25,
+        "Accuracy_%": 58.76,
+        "Fin_Accuracy_%": 69.95
       },
       {
         "Model": "Periodic Review (R,s,S)",
-        "RMSE": 18928.92,
-        "MAE": 14093.74,
+        "RMSE": 18.93,
+        "MAE": 14.09,
         "MAPE_%": 84.34,
         "WAPE_%": 41.32,
-        "Bias": -10116.28,
-        "Accuracy_%": 58.68
+        "Bias": -10.12,
+        "Accuracy_%": 58.68,
+        "Fin_Accuracy_%": 70.34
       },
       {
         "Model": "LightGBM Regressor",
-        "RMSE": 18928.92,
-        "MAE": 14093.74,
+        "RMSE": 18.93,
+        "MAE": 14.09,
         "MAPE_%": 84.34,
         "WAPE_%": 41.32,
-        "Bias": -10116.28,
-        "Accuracy_%": 58.68
+        "Bias": -10.12,
+        "Accuracy_%": 58.68,
+        "Fin_Accuracy_%": 70.34
       },
       {
         "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 18977.62,
-        "MAE": 14200.84,
+        "RMSE": 18.98,
+        "MAE": 14.2,
         "MAPE_%": 94.17,
         "WAPE_%": 41.64,
-        "Bias": -9979.8,
-        "Accuracy_%": 58.36
+        "Bias": -9.98,
+        "Accuracy_%": 58.36,
+        "Fin_Accuracy_%": 70.74
       },
       {
         "Model": "Naive (prev 4w lag)",
-        "RMSE": 19015.56,
-        "MAE": 14952.28,
+        "RMSE": 19.02,
+        "MAE": 14.95,
         "MAPE_%": 55.54,
         "WAPE_%": 43.84,
-        "Bias": -2753.02,
-        "Accuracy_%": 56.16
+        "Bias": -2.75,
+        "Accuracy_%": 56.16,
+        "Fin_Accuracy_%": 91.93
       }
     ]
   },
@@ -179,75 +196,83 @@
     "table": [
       {
         "Model": "Croston / SBA Intermittent",
-        "RMSE": 17403.79,
-        "MAE": 15034.89,
+        "RMSE": 17.4,
+        "MAE": 15.03,
         "MAPE_%": 192.07,
         "WAPE_%": 72.07,
-        "Bias": 7092.46,
-        "Accuracy_%": 27.93
-      },
-      {
-        "Model": "Exp. Smoothing (SES)",
-        "RMSE": 17382.83,
-        "MAE": 15039.26,
-        "MAPE_%": 147.93,
-        "WAPE_%": 72.09,
-        "Bias": 5893.93,
-        "Accuracy_%": 27.91
+        "Bias": 7.09,
+        "Accuracy_%": 27.93,
+        "Fin_Accuracy_%": 66.0
       },
       {
         "Model": "SMA (8w)",
-        "RMSE": 17842.96,
-        "MAE": 15042.69,
+        "RMSE": 17.84,
+        "MAE": 15.04,
         "MAPE_%": 132.13,
         "WAPE_%": 72.11,
-        "Bias": 6044.81,
-        "Accuracy_%": 27.89
+        "Bias": 6.04,
+        "Accuracy_%": 27.89,
+        "Fin_Accuracy_%": 71.02
+      },
+      {
+        "Model": "Exp. Smoothing (SES)",
+        "RMSE": 17.38,
+        "MAE": 15.04,
+        "MAPE_%": 147.93,
+        "WAPE_%": 72.09,
+        "Bias": 5.89,
+        "Accuracy_%": 27.91,
+        "Fin_Accuracy_%": 71.75
       },
       {
         "Model": "Holt-Winters (damped)",
-        "RMSE": 21421.04,
-        "MAE": 17648.3,
-        "MAPE_%": 139.43,
-        "WAPE_%": 84.6,
-        "Bias": 8576.75,
-        "Accuracy_%": 15.4
+        "RMSE": 21.71,
+        "MAE": 17.77,
+        "MAPE_%": 126.29,
+        "WAPE_%": 85.19,
+        "Bias": 8.76,
+        "Accuracy_%": 14.81,
+        "Fin_Accuracy_%": 58.01
       },
       {
         "Model": "ARIMA",
-        "RMSE": 24686.7,
-        "MAE": 20475.46,
-        "MAPE_%": 286.02,
-        "WAPE_%": 98.15,
-        "Bias": 18112.25,
-        "Accuracy_%": 1.85
+        "RMSE": 24.59,
+        "MAE": 20.46,
+        "MAPE_%": 286.13,
+        "WAPE_%": 98.06,
+        "Bias": 17.9,
+        "Accuracy_%": 1.94,
+        "Fin_Accuracy_%": 14.2
       },
       {
         "Model": "Naive (prev qtr lag)",
-        "RMSE": 25704.11,
-        "MAE": 21752.18,
+        "RMSE": 25.7,
+        "MAE": 21.75,
         "MAPE_%": 88.17,
         "WAPE_%": 104.27,
-        "Bias": 4402.8,
-        "Accuracy_%": 0.0
+        "Bias": 4.4,
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 78.89
       },
       {
         "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 26577.74,
-        "MAE": 22356.48,
+        "RMSE": 26.58,
+        "MAE": 22.36,
         "MAPE_%": 303.4,
         "WAPE_%": 107.17,
-        "Bias": 20886.09,
-        "Accuracy_%": 0.0
+        "Bias": 20.89,
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 0.0
       },
       {
         "Model": "LightGBM Regressor",
-        "RMSE": 26854.37,
-        "MAE": 22514.49,
+        "RMSE": 26.85,
+        "MAE": 22.51,
         "MAPE_%": 310.93,
         "WAPE_%": 107.92,
-        "Bias": 20952.18,
-        "Accuracy_%": 0.0
+        "Bias": 20.95,
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 0.0
       }
     ]
   },
@@ -265,7 +290,8 @@
         "MAPE_%": 96.44,
         "WAPE_%": 126.02,
         "Bias": -216.69,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 58.35
       },
       {
         "Model": "\u2605 Arth Daily Event-Aware Ridge",
@@ -274,7 +300,8 @@
         "MAPE_%": 95.93,
         "WAPE_%": 126.69,
         "Bias": -213.95,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 58.87
       },
       {
         "Model": "Daily ARIMA(1,0,1)",
@@ -283,7 +310,8 @@
         "MAPE_%": 100.42,
         "WAPE_%": 128.43,
         "Bias": -191.87,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 63.12
       },
       {
         "Model": "Daily Naive (t-1)",
@@ -292,7 +320,8 @@
         "MAPE_%": 143.06,
         "WAPE_%": 133.53,
         "Bias": -235.97,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 54.64
       },
       {
         "Model": "Daily SES",
@@ -301,7 +330,8 @@
         "MAPE_%": 125.6,
         "WAPE_%": 137.61,
         "Bias": -95.62,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 81.62
       },
       {
         "Model": "Daily 28-Day Moving Avg",
@@ -310,7 +340,8 @@
         "MAPE_%": 143.61,
         "WAPE_%": 146.01,
         "Bias": -8.24,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 98.42
       },
       {
         "Model": "Daily 7-Day Moving Avg",
@@ -319,7 +350,8 @@
         "MAPE_%": 143.81,
         "WAPE_%": 148.92,
         "Bias": -2.19,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 99.58
       },
       {
         "Model": "Daily 7-Day Seasonal Naive (t-7)",
@@ -328,7 +360,8 @@
         "MAPE_%": 222.26,
         "WAPE_%": 154.21,
         "Bias": -2.19,
-        "Accuracy_%": 0.0
+        "Accuracy_%": 0.0,
+        "Fin_Accuracy_%": 99.58
       }
     ]
   },
@@ -341,75 +374,83 @@
     "table": [
       {
         "Model": "Naive (prev qtr lag)",
-        "RMSE": 4686.49,
-        "MAE": 3404.53,
+        "RMSE": 4.69,
+        "MAE": 3.4,
         "MAPE_%": 226.38,
         "WAPE_%": 93.08,
-        "Bias": 85.62,
-        "Accuracy_%": 6.92
+        "Bias": 0.09,
+        "Accuracy_%": 6.92,
+        "Fin_Accuracy_%": 97.66
       },
       {
         "Model": "Exp. Smoothing (SES)",
-        "RMSE": 3787.25,
-        "MAE": 2982.32,
+        "RMSE": 3.79,
+        "MAE": 2.98,
         "MAPE_%": 211.55,
         "WAPE_%": 81.54,
-        "Bias": 204.33,
-        "Accuracy_%": 18.46
+        "Bias": 0.2,
+        "Accuracy_%": 18.46,
+        "Fin_Accuracy_%": 94.41
       },
       {
         "Model": "SMA (8w)",
-        "RMSE": 3679.13,
-        "MAE": 2826.81,
+        "RMSE": 3.68,
+        "MAE": 2.83,
         "MAPE_%": 178.58,
         "WAPE_%": 77.29,
-        "Bias": -264.52,
-        "Accuracy_%": 22.71
+        "Bias": -0.26,
+        "Accuracy_%": 22.71,
+        "Fin_Accuracy_%": 92.77
       },
       {
         "Model": "\u2605 Arth Event-Aware Ridge",
-        "RMSE": 3555.48,
-        "MAE": 2837.78,
+        "RMSE": 3.56,
+        "MAE": 2.84,
         "MAPE_%": 224.62,
         "WAPE_%": 77.59,
-        "Bias": 610.02,
-        "Accuracy_%": 22.41
+        "Bias": 0.61,
+        "Accuracy_%": 22.41,
+        "Fin_Accuracy_%": 83.32
       },
       {
         "Model": "Periodic Review (R, S) Buffer",
-        "RMSE": 3508.42,
-        "MAE": 2819.61,
+        "RMSE": 3.51,
+        "MAE": 2.82,
         "MAPE_%": 222.43,
         "WAPE_%": 77.09,
-        "Bias": 630.97,
-        "Accuracy_%": 22.91
+        "Bias": 0.63,
+        "Accuracy_%": 22.91,
+        "Fin_Accuracy_%": 82.75
       },
       {
         "Model": "LightGBM Regressor",
-        "RMSE": 3508.42,
-        "MAE": 2819.61,
+        "RMSE": 3.51,
+        "MAE": 2.82,
         "MAPE_%": 222.43,
         "WAPE_%": 77.09,
-        "Bias": 630.97,
-        "Accuracy_%": 22.91
+        "Bias": 0.63,
+        "Accuracy_%": 22.91,
+        "Fin_Accuracy_%": 82.75
       },
       {
         "Model": "ARIMA",
-        "RMSE": 3522.39,
-        "MAE": 2854.31,
-        "MAPE_%": 223.45,
-        "WAPE_%": 78.04,
-        "Bias": 671.49,
-        "Accuracy_%": 21.96
+        "RMSE": 3.52,
+        "MAE": 2.85,
+        "MAPE_%": 223.1,
+        "WAPE_%": 78.01,
+        "Bias": 0.67,
+        "Accuracy_%": 21.99,
+        "Fin_Accuracy_%": 81.8
       },
       {
         "Model": "Holt-Winters (damped)",
-        "RMSE": 3578.87,
-        "MAE": 2918.39,
-        "MAPE_%": 239.46,
-        "WAPE_%": 79.79,
-        "Bias": 973.45,
-        "Accuracy_%": 20.21
+        "RMSE": 3.56,
+        "MAE": 2.9,
+        "MAPE_%": 235.31,
+        "WAPE_%": 79.22,
+        "Bias": 0.89,
+        "Accuracy_%": 20.78,
+        "Fin_Accuracy_%": 75.59
       }
     ]
   }

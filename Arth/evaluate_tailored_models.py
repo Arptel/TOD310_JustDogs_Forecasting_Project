@@ -53,17 +53,20 @@ def metrics(y, p):
     mae = mean_absolute_error(y, p)
     bias = np.mean(p - y)
     tot_y = np.sum(y)
+    tot_p = np.sum(p)
+    fin_acc = max(0.0, (1.0 - abs(tot_y - tot_p) / tot_y) * 100.0) if tot_y > 0 else 0.0
     wape = (np.sum(np.abs(y - p)) / tot_y * 100) if tot_y > 0 else 0.0
     nz = y != 0
     mape = (np.mean(np.abs((y[nz] - p[nz]) / y[nz])) * 100) if np.sum(nz) > 0 else 0.0
-    acc = max(0.0, 100.0 - wape)
+    vol_acc = max(0.0, 100.0 - wape)
     return {
         "RMSE": round(float(rmse), 2),
         "MAE": round(float(mae), 2),
         "MAPE_%": round(float(mape), 2),
         "WAPE_%": round(float(wape), 2),
         "Bias": round(float(bias), 2),
-        "Accuracy_%": round(float(acc), 2)
+        "Accuracy_%": round(float(vol_acc), 2),
+        "Fin_Accuracy_%": round(float(fin_acc), 2)
     }
 
 def build_calendar_features(dates_index):
@@ -120,7 +123,7 @@ results = {}
 print("Running P04606 Benchmark...")
 p_raw = raw[raw["product_id"] == "P04606"]
 p_daily = p_raw.groupby("date")["sales"].sum().asfreq("D", fill_value=0.0)
-p_weekly = p_daily.resample("W-SUN").sum()
+p_weekly = p_daily.resample("W-SUN").sum() / 1e3
 
 quarters = [
     ("Q3 2024", "2024-07-01", "2024-09-30"),
@@ -214,7 +217,7 @@ results["P04606"] = {
 print("Running P02065 Benchmark...")
 p_raw = raw[raw["product_id"] == "P02065"]
 p_daily = p_raw.groupby("date")["sales"].sum().asfreq("D", fill_value=0.0)
-p_weekly = p_daily.resample("W-SUN").sum()
+p_weekly = p_daily.resample("W-SUN").sum() / 1e3
 # First sale starts around mid 2024
 p_weekly_active = p_weekly[p_weekly.index >= "2024-07-01"]
 
@@ -301,7 +304,7 @@ results["P02065"] = {
 print("Running P01032 Benchmark...")
 p_raw = raw[raw["product_id"] == "P01032"]
 p_daily = p_raw.groupby("date")["sales"].sum().asfreq("D", fill_value=0.0)
-p_weekly = p_daily.resample("W-SUN").sum()
+p_weekly = p_daily.resample("W-SUN").sum() / 1e3
 
 preds_p01032 = {m: [] for m in [
     "★ Arth Event-Aware Ridge", "Croston / SBA Intermittent", "SMA (8w)",
@@ -456,7 +459,7 @@ results["P00084"] = {
 print("Running P04291 Benchmark...")
 p_raw = raw[raw["product_id"] == "P04291"]
 p_daily = p_raw.groupby("date")["sales"].sum().asfreq("D", fill_value=0.0)
-p_weekly = p_daily.resample("W-SUN").sum()
+p_weekly = p_daily.resample("W-SUN").sum() / 1e3
 
 preds_p04291 = {m: [] for m in [
     "★ Arth Event-Aware Ridge", "Periodic Review (R, S) Buffer", "SMA (8w)",
