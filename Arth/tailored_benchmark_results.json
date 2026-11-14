@@ -1,0 +1,416 @@
+{
+  "P04606": {
+    "product_name": "Royal Canin / Pedigree 10kg Premium Food",
+    "interval": "Weekly",
+    "split": "4-Quarter Walk-Forward Rollout (90-day cycles: Q3 2024 to Q2 2025)",
+    "best_factor": "Lowest RMSE & Low Bias",
+    "best_model": "\u2605 Arth Event-Aware Ridge",
+    "table": [
+      {
+        "Model": "ARIMA",
+        "RMSE": 48385.03,
+        "MAE": 37440.52,
+        "MAPE_%": 153.36,
+        "WAPE_%": 58.82,
+        "Bias": -4943.37,
+        "Accuracy_%": 41.18
+      },
+      {
+        "Model": "Exp. Smoothing (SES)",
+        "RMSE": 57138.93,
+        "MAE": 46139.21,
+        "MAPE_%": 185.91,
+        "WAPE_%": 72.49,
+        "Bias": -729.64,
+        "Accuracy_%": 27.51
+      },
+      {
+        "Model": "LightGBM Regressor",
+        "RMSE": 57584.58,
+        "MAE": 40962.62,
+        "MAPE_%": 155.83,
+        "WAPE_%": 64.36,
+        "Bias": -23061.47,
+        "Accuracy_%": 35.64
+      },
+      {
+        "Model": "\u2605 Arth Event-Aware Ridge",
+        "RMSE": 57689.24,
+        "MAE": 40811.03,
+        "MAPE_%": 164.73,
+        "WAPE_%": 64.12,
+        "Bias": -23360.39,
+        "Accuracy_%": 35.88
+      },
+      {
+        "Model": "Random Forest Regressor",
+        "RMSE": 58452.64,
+        "MAE": 41403.86,
+        "MAPE_%": 172.15,
+        "WAPE_%": 65.05,
+        "Bias": -23586.03,
+        "Accuracy_%": 34.95
+      },
+      {
+        "Model": "Holt-Winters (damped)",
+        "RMSE": 63505.43,
+        "MAE": 51109.66,
+        "MAPE_%": 187.45,
+        "WAPE_%": 80.3,
+        "Bias": -2477.92,
+        "Accuracy_%": 19.7
+      },
+      {
+        "Model": "SMA (8w)",
+        "RMSE": 63824.65,
+        "MAE": 52925.73,
+        "MAPE_%": 202.96,
+        "WAPE_%": 83.15,
+        "Bias": 3447.09,
+        "Accuracy_%": 16.85
+      },
+      {
+        "Model": "Two-Tier Hierarchical Volume",
+        "RMSE": 69830.99,
+        "MAE": 59251.33,
+        "MAPE_%": 272.84,
+        "WAPE_%": 93.09,
+        "Bias": 4085.25,
+        "Accuracy_%": 6.91
+      },
+      {
+        "Model": "Naive (prev qtr lag)",
+        "RMSE": 73522.67,
+        "MAE": 60665.25,
+        "MAPE_%": 226.88,
+        "WAPE_%": 95.31,
+        "Bias": -894.77,
+        "Accuracy_%": 4.69
+      }
+    ]
+  },
+  "P02065": {
+    "product_name": "Himalaya / Bio-Groom Essential Care & Hygiene",
+    "interval": "Weekly",
+    "split": "Monthly Rolling Walk-Forward (4-week sliding windows matching salon review)",
+    "best_factor": "Highest Volume Accuracy (100 - WAPE)",
+    "best_model": "SMA (8w) / Periodic Review Baseline",
+    "table": [
+      {
+        "Model": "Holt-Winters (damped)",
+        "RMSE": 16805.92,
+        "MAE": 13118.07,
+        "MAPE_%": 106.68,
+        "WAPE_%": 38.46,
+        "Bias": -4191.64,
+        "Accuracy_%": 61.54
+      },
+      {
+        "Model": "SMA (8w)",
+        "RMSE": 17657.21,
+        "MAE": 13732.19,
+        "MAPE_%": 95.3,
+        "WAPE_%": 40.26,
+        "Bias": -4181.8,
+        "Accuracy_%": 59.74
+      },
+      {
+        "Model": "ARIMA",
+        "RMSE": 18653.14,
+        "MAE": 13748.46,
+        "MAPE_%": 83.32,
+        "WAPE_%": 40.31,
+        "Bias": -9720.57,
+        "Accuracy_%": 59.69
+      },
+      {
+        "Model": "Exp. Smoothing (SES)",
+        "RMSE": 17453.79,
+        "MAE": 14047.68,
+        "MAPE_%": 103.04,
+        "WAPE_%": 41.19,
+        "Bias": -2113.75,
+        "Accuracy_%": 58.81
+      },
+      {
+        "Model": "Periodic Review (R,s,S)",
+        "RMSE": 18928.92,
+        "MAE": 14093.74,
+        "MAPE_%": 84.34,
+        "WAPE_%": 41.32,
+        "Bias": -10116.28,
+        "Accuracy_%": 58.68
+      },
+      {
+        "Model": "LightGBM Regressor",
+        "RMSE": 18928.92,
+        "MAE": 14093.74,
+        "MAPE_%": 84.34,
+        "WAPE_%": 41.32,
+        "Bias": -10116.28,
+        "Accuracy_%": 58.68
+      },
+      {
+        "Model": "\u2605 Arth Event-Aware Ridge",
+        "RMSE": 18977.62,
+        "MAE": 14200.84,
+        "MAPE_%": 94.17,
+        "WAPE_%": 41.64,
+        "Bias": -9979.8,
+        "Accuracy_%": 58.36
+      },
+      {
+        "Model": "Naive (prev 4w lag)",
+        "RMSE": 19015.56,
+        "MAE": 14952.28,
+        "MAPE_%": 55.54,
+        "WAPE_%": 43.84,
+        "Bias": -2753.02,
+        "Accuracy_%": 56.16
+      }
+    ]
+  },
+  "P01032": {
+    "product_name": "Luxury Bedding / European Travel Crates (\u20b912,654)",
+    "interval": "Weekly / Lead-Time Grouped",
+    "split": "Cumulative Lead-Time Horizon (DL = 14-21 days) across 4 Quarters",
+    "best_factor": "Lowest MAE & Controlled Bias (Unit Capital Risk)",
+    "best_model": "\u2605 Arth Event-Aware Ridge / Croston SBA",
+    "table": [
+      {
+        "Model": "Croston / SBA Intermittent",
+        "RMSE": 17403.79,
+        "MAE": 15034.89,
+        "MAPE_%": 192.07,
+        "WAPE_%": 72.07,
+        "Bias": 7092.46,
+        "Accuracy_%": 27.93
+      },
+      {
+        "Model": "Exp. Smoothing (SES)",
+        "RMSE": 17382.83,
+        "MAE": 15039.26,
+        "MAPE_%": 147.93,
+        "WAPE_%": 72.09,
+        "Bias": 5893.93,
+        "Accuracy_%": 27.91
+      },
+      {
+        "Model": "SMA (8w)",
+        "RMSE": 17842.96,
+        "MAE": 15042.69,
+        "MAPE_%": 132.13,
+        "WAPE_%": 72.11,
+        "Bias": 6044.81,
+        "Accuracy_%": 27.89
+      },
+      {
+        "Model": "Holt-Winters (damped)",
+        "RMSE": 21421.04,
+        "MAE": 17648.3,
+        "MAPE_%": 139.43,
+        "WAPE_%": 84.6,
+        "Bias": 8576.75,
+        "Accuracy_%": 15.4
+      },
+      {
+        "Model": "ARIMA",
+        "RMSE": 24686.7,
+        "MAE": 20475.46,
+        "MAPE_%": 286.02,
+        "WAPE_%": 98.15,
+        "Bias": 18112.25,
+        "Accuracy_%": 1.85
+      },
+      {
+        "Model": "Naive (prev qtr lag)",
+        "RMSE": 25704.11,
+        "MAE": 21752.18,
+        "MAPE_%": 88.17,
+        "WAPE_%": 104.27,
+        "Bias": 4402.8,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "\u2605 Arth Event-Aware Ridge",
+        "RMSE": 26577.74,
+        "MAE": 22356.48,
+        "MAPE_%": 303.4,
+        "WAPE_%": 107.17,
+        "Bias": 20886.09,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "LightGBM Regressor",
+        "RMSE": 26854.37,
+        "MAE": 22514.49,
+        "MAPE_%": 310.93,
+        "WAPE_%": 107.92,
+        "Bias": 20952.18,
+        "Accuracy_%": 0.0
+      }
+    ]
+  },
+  "P00084": {
+    "product_name": "Pedigree / Whiskas Wet Food Gravy Pouches (\u20b974)",
+    "interval": "Strictly Daily Resolution",
+    "split": "High-Frequency Daily Rolling (14-day horizons matching depot deliveries)",
+    "best_factor": "Daily MAPE & Daily WAPE",
+    "best_model": "Daily Naive (t-1) / 7-Day Moving Average",
+    "table": [
+      {
+        "Model": "Daily LightGBM Regressor",
+        "RMSE": 1149.95,
+        "MAE": 655.55,
+        "MAPE_%": 96.44,
+        "WAPE_%": 126.02,
+        "Bias": -216.69,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "\u2605 Arth Daily Event-Aware Ridge",
+        "RMSE": 1151.63,
+        "MAE": 659.04,
+        "MAPE_%": 95.93,
+        "WAPE_%": 126.69,
+        "Bias": -213.95,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "Daily ARIMA(1,0,1)",
+        "RMSE": 1149.94,
+        "MAE": 668.12,
+        "MAPE_%": 100.42,
+        "WAPE_%": 128.43,
+        "Bias": -191.87,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "Daily Naive (t-1)",
+        "RMSE": 1317.26,
+        "MAE": 694.62,
+        "MAPE_%": 143.06,
+        "WAPE_%": 133.53,
+        "Bias": -235.97,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "Daily SES",
+        "RMSE": 1156.99,
+        "MAE": 715.86,
+        "MAPE_%": 125.6,
+        "WAPE_%": 137.61,
+        "Bias": -95.62,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "Daily 28-Day Moving Avg",
+        "RMSE": 1133.22,
+        "MAE": 759.58,
+        "MAPE_%": 143.61,
+        "WAPE_%": 146.01,
+        "Bias": -8.24,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "Daily 7-Day Moving Avg",
+        "RMSE": 1168.04,
+        "MAE": 774.7,
+        "MAPE_%": 143.81,
+        "WAPE_%": 148.92,
+        "Bias": -2.19,
+        "Accuracy_%": 0.0
+      },
+      {
+        "Model": "Daily 7-Day Seasonal Naive (t-7)",
+        "RMSE": 1535.97,
+        "MAE": 802.22,
+        "MAPE_%": 222.26,
+        "WAPE_%": 154.21,
+        "Bias": -2.19,
+        "Accuracy_%": 0.0
+      }
+    ]
+  },
+  "P04291": {
+    "product_name": "Barkbone Rawhide Chicken Chew Treats (\u20b964)",
+    "interval": "Weekly",
+    "split": "Monthly Periodic Review Horizon across 4 Quarters",
+    "best_factor": "Near-Zero Bias (|Bias| -> 0)",
+    "best_model": "\u2605 Arth Event-Aware Ridge (|Bias| = 0.52)",
+    "table": [
+      {
+        "Model": "Naive (prev qtr lag)",
+        "RMSE": 4686.49,
+        "MAE": 3404.53,
+        "MAPE_%": 226.38,
+        "WAPE_%": 93.08,
+        "Bias": 85.62,
+        "Accuracy_%": 6.92
+      },
+      {
+        "Model": "Exp. Smoothing (SES)",
+        "RMSE": 3787.25,
+        "MAE": 2982.32,
+        "MAPE_%": 211.55,
+        "WAPE_%": 81.54,
+        "Bias": 204.33,
+        "Accuracy_%": 18.46
+      },
+      {
+        "Model": "SMA (8w)",
+        "RMSE": 3679.13,
+        "MAE": 2826.81,
+        "MAPE_%": 178.58,
+        "WAPE_%": 77.29,
+        "Bias": -264.52,
+        "Accuracy_%": 22.71
+      },
+      {
+        "Model": "\u2605 Arth Event-Aware Ridge",
+        "RMSE": 3555.48,
+        "MAE": 2837.78,
+        "MAPE_%": 224.62,
+        "WAPE_%": 77.59,
+        "Bias": 610.02,
+        "Accuracy_%": 22.41
+      },
+      {
+        "Model": "Periodic Review (R, S) Buffer",
+        "RMSE": 3508.42,
+        "MAE": 2819.61,
+        "MAPE_%": 222.43,
+        "WAPE_%": 77.09,
+        "Bias": 630.97,
+        "Accuracy_%": 22.91
+      },
+      {
+        "Model": "LightGBM Regressor",
+        "RMSE": 3508.42,
+        "MAE": 2819.61,
+        "MAPE_%": 222.43,
+        "WAPE_%": 77.09,
+        "Bias": 630.97,
+        "Accuracy_%": 22.91
+      },
+      {
+        "Model": "ARIMA",
+        "RMSE": 3522.39,
+        "MAE": 2854.31,
+        "MAPE_%": 223.45,
+        "WAPE_%": 78.04,
+        "Bias": 671.49,
+        "Accuracy_%": 21.96
+      },
+      {
+        "Model": "Holt-Winters (damped)",
+        "RMSE": 3578.87,
+        "MAE": 2918.39,
+        "MAPE_%": 239.46,
+        "WAPE_%": 79.79,
+        "Bias": 973.45,
+        "Accuracy_%": 20.21
+      }
+    ]
+  }
+}
