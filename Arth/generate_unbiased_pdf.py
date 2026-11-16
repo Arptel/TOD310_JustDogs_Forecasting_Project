@@ -243,7 +243,7 @@ def build_unbiased_pdf():
             Paragraph("<b>Naive / Holt-Winters</b><br/>RMSE 25.73k | Acc 57.0%", td_left_bold),
         ],
         [
-            Paragraph("<b>P02065</b><br/>Bio-Groom Care", td_left_bold),
+            Paragraph("<b>P02065</b><br/>Product P02065", td_left_bold),
             Paragraph("Grooming Care<br/>₹930.40", td_left),
             Paragraph("Stationary Smooth<br/>ADI 1.46d | CV² 1.11", td_left),
             Paragraph("<b>Weekly</b><br/>Smooths Sat/Sun peak", td_left),
@@ -397,7 +397,7 @@ def build_unbiased_pdf():
         "<b>Viva Takeaway:</b> When staple products experience steady non-promotional consumption, Occam's Razor wins: exponential smoothing adapts immediately."
     )
     story.extend(make_product_table(
-        "P04606", "Royal Canin / Pedigree 10kg Food", "Bulk Dry Nutrition | ASP ₹2,202.66",
+        "P04606", "Product P04606", "Bulk Dry Nutrition | ASP ₹2,202.66",
         "p = 0.1885 (Non-Stationary -> 1st Diff)", "Weekly", "Lowest RMSE & Near-Zero Bias",
         p1_verdict, p1_rows
     ))
@@ -422,7 +422,7 @@ def build_unbiased_pdf():
         "with virtually zero bias (-0.99k), proving that a simple trailing average provides bulletproof inventory replenishment without ML overhead."
     )
     story.extend(make_product_table(
-        "P02065", "Himalaya / Bio-Groom Hygiene Care", "Grooming & Health | ASP ₹930.40",
+        "P02065", "Product P02065", "Grooming & Health | ASP ₹930.40",
         "p = 0.0000 (Stationary -> Level)", "Weekly (Orders) / Daily (Staffing)", "Volume Accuracy (100 - WAPE)",
         p2_verdict, p2_rows
     ))
@@ -449,7 +449,7 @@ def build_unbiased_pdf():
         "Pet parents purchase premium orthopedic crates during payday weekends; our daily calendar captures this exact trigger."
     )
     story.extend(make_product_table(
-        "P01032", "Savic / Ferplast Luxury Crate & Bed", "Capital Luxury Goods | ASP ₹12,654.93",
+        "P01032", "Product P01032", "Capital Luxury Goods | ASP ₹12,654.93",
         "p = 0.6845 (Non-Stationary -> 1st Diff)", "Weekly / Bi-Weekly", "Lowest MAE & Controlled Negative Bias",
         p3_verdict, p3_rows
     ))
@@ -474,7 +474,7 @@ def build_unbiased_pdf():
         "outperforming SARIMAX (59.29%) and crushing smoothing baselines (<18%)."
     )
     story.extend(make_product_table(
-        "P00084", "Royal Canin Gravy Wet Food Pouches", "Fast-Moving Grocery | ASP ₹73.93",
+        "P00084", "Product P00084", "Fast-Moving Grocery | ASP ₹73.93",
         "p = 0.1467 (Non-Stationary -> 1st Diff)", "Daily / Weekly (Both Viable)", "MAPE & WAPE Accuracy",
         p4_verdict, p4_rows
     ))

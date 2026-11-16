@@ -212,7 +212,7 @@ for m_name, p_vals in preds_p04606.items():
     m_p04606.append({"Model": m_name, **sc})
 df_p04606 = pd.DataFrame(m_p04606).sort_values(by="RMSE")
 results["P04606"] = {
-    "product_name": "Royal Canin / Pedigree 10kg Premium Food",
+    "product_name": "Product P04606",
     "interval": "Weekly",
     "split": "4-Quarter Walk-Forward Rollout (90-day cycles: Q3 2024 to Q2 2025)",
     "best_factor": "Lowest RMSE & Low Bias",
@@ -266,7 +266,7 @@ for m_name, p_vals in preds_p02065.items():
     m_p02065.append({"Model": m_name, **sc})
 df_p02065 = pd.DataFrame(m_p02065).sort_values(by="Accuracy_%", ascending=False)
 results["P02065"] = {
-    "product_name": "Himalaya / Bio-Groom Essential Care & Hygiene",
+    "product_name": "Product P02065",
     "interval": "Weekly",
     "split": "Monthly Rolling Walk-Forward (4-week sliding windows matching salon review)",
     "best_factor": "Highest Volume Accuracy (100 - WAPE)",
@@ -322,7 +322,7 @@ for m_name, p_vals in preds_p01032.items():
     m_p01032.append({"Model": m_name, **sc})
 df_p01032 = pd.DataFrame(m_p01032).sort_values(by="MAE")
 results["P01032"] = {
-    "product_name": "Luxury Bedding / European Travel Crates (₹12,654)",
+    "product_name": "Product P01032",
     "interval": "Weekly / Lead-Time Grouped",
     "split": "Cumulative Lead-Time Horizon (DL = 14-21 days) across 4 Quarters",
     "best_factor": "Lowest MAE & Controlled Bias (Unit Capital Risk)",
@@ -371,7 +371,7 @@ for m_name, p_vals in preds_p00084.items():
     m_p00084.append({"Model": m_name, **sc})
 df_p00084 = pd.DataFrame(m_p00084).sort_values(by="MAPE_%")
 results["P00084"] = {
-    "product_name": "Pedigree / Whiskas Wet Food Gravy Pouches (₹74)",
+    "product_name": "Product P00084",
     "interval": "Strictly Daily Resolution",
     "split": "High-Frequency Daily Rolling (14-day horizons matching depot deliveries)",
     "best_factor": "Daily MAPE & Daily WAPE",
@@ -428,7 +428,7 @@ df_p04291 = pd.DataFrame(m_p04291).sort_values(by="Abs_Bias")
 for row in m_p04291:
     del row["Abs_Bias"]
 results["P04291"] = {
-    "product_name": "Barkbone Rawhide Chicken Chew Treats (₹64)",
+    "product_name": "Product P04291",
     "interval": "Weekly",
     "split": "Monthly Periodic Review Horizon across 4 Quarters",
     "best_factor": "Near-Zero Bias (|Bias| -> 0)",

@@ -203,7 +203,7 @@ def build_pdf():
     portfolio_rows = [
         [
             Paragraph("<b>P04606</b>", tbl_cell_bold),
-            Paragraph("Royal Canin / Pedigree 10kg Premium Dog Food", tbl_cell_style),
+            Paragraph("Product P04606", tbl_cell_style),
             Paragraph("₹37.98 L", tbl_cell_style),
             Paragraph("₹30.55 L", tbl_cell_style),
             Paragraph("1,387", tbl_cell_style),

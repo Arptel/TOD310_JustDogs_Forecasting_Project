@@ -52,33 +52,33 @@ os.makedirs(PLOT_DIR, exist_ok=True)
 # Top 5 Chosen Champion Products
 TOP_5_PRODUCTS = {
     'P04606': {
-        'name': 'Royal Canin / Pedigree 10kg Premium Nutrition',
+        'name': 'P04606',
         'role': 'Flagship Revenue Driver (#1 Recent Sales: INR 30.55 Lakhs)',
-        'category': 'Premium Dog Nutrition',
+        'category': 'High-ASP SKU (ASP Rs. 2,202.66)',
         'asp': 2202.66
     },
     'P02065': {
-        'name': 'Himalaya / Bio-Groom Essential Care & Hygiene',
+        'name': 'P02065',
         'role': 'Flagship Frequency Leader (250/365 Active Days)',
-        'category': 'Grooming & Essential Care',
+        'category': 'High-Frequency SKU (ASP Rs. 930.40)',
         'asp': 930.40
     },
     'P01032': {
-        'name': 'Savic / Ferplast Luxury Orthopedic Crate & Bedding',
+        'name': 'P01032',
         'role': 'Flagship Lifetime Revenue Asset (#1 Lifetime: INR 53.53 Lakhs)',
-        'category': 'Durable Equipment & Bedding',
+        'category': 'Capital High-Ticket SKU (ASP Rs. 12,654.93)',
         'asp': 12654.93
     },
     'P00084': {
-        'name': 'Pedigree / Royal Canin Gravy Wet Food Pouches',
+        'name': 'P00084',
         'role': 'Flagship Predictability Staple (99.5% Q2 Accuracy, 3-Yr Continuity)',
-        'category': 'Wet Food & Nutrition Toppers',
+        'category': 'Continuous Velocity Staple (ASP Rs. 73.93)',
         'asp': 73.93
     },
     'P04291': {
-        'name': 'Gnawlers / JerHigh Chicken Chew Treats',
+        'name': 'P04291',
         'role': 'Flagship High-Velocity Impulse Treat (2,986 units, 139 Active Days)',
-        'category': 'Dental Chews & Treats',
+        'category': 'Low-Ticket Impulse SKU (ASP Rs. 63.69)',
         'asp': 63.69
     }
 }

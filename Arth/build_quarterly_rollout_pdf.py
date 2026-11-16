@@ -367,35 +367,35 @@ def generate_pdf():
 
     bp_rows = [
         [
-            Paragraph("<b>P04606</b><br/>Pedigree 10kg Food<br/>ASP ₹2,202.66", td_left),
-            Paragraph("<b>Weekly</b><br/>Pallet space & distributor lead times", td_left),
+            Paragraph("<b>Product P04606</b><br/>ASP ₹2,202.66", td_left),
+            Paragraph("<b>Weekly</b><br/>Pallet space & supplier lead times", td_left),
             Paragraph("<b>Lowest RMSE</b><br/>& Low Bias", td_left_bold),
             Paragraph("Quadratic penalty on large stockout errors during holiday surges", td_left),
             Paragraph("★ <b>Arth Event Ridge</b><br/>Lowest RMSE (57.98k) & Bias (+0.84k)", td_left_bold),
         ],
         [
-            Paragraph("<b>P02065</b><br/>Bio-Groom Care<br/>ASP ₹930.40", td_left),
-            Paragraph("<b>Weekly</b><br/>Smooths 45% Sat-Sun grooming surge", td_left),
+            Paragraph("<b>Product P02065</b><br/>ASP ₹930.40", td_left),
+            Paragraph("<b>Weekly</b><br/>Smooths 45% Sat-Sun weekend rush", td_left),
             Paragraph("<b>WAPE / Volume Acc</b><br/>(100 - WAPE)", td_left_bold),
-            Paragraph("Matches shampoo bottles directly to aggregate salon appointments", td_left),
+            Paragraph("Matches consumable units directly to store aggregate appointments", td_left),
             Paragraph("<b>SMA (8w)</b><br/>WAPE: 54.00% | Acc: 46.00%", td_left_bold),
         ],
         [
-            Paragraph("<b>P01032</b><br/>Luxury Bedding<br/>ASP ₹12,654.93", td_left),
+            Paragraph("<b>Product P01032</b><br/>ASP ₹12,654.93", td_left),
             Paragraph("<b>Weekly</b><br/>Filters 69.1% zero daily sales", td_left),
             Paragraph("<b>Lowest MAE</b><br/>& Controlled Bias", td_left_bold),
-            Paragraph("Measures real physical crate deviation; avoids ₹12.6k dead inventory", td_left),
+            Paragraph("Measures real physical unit deviation; avoids ₹12.6k dead inventory", td_left),
             Paragraph("★ <b>Arth Event Ridge</b><br/>Lowest MAE (15.74k) & RMSE (18.65k)", td_left_bold),
         ],
         [
-            Paragraph("<b>P00084</b><br/>Gravy Pouches<br/>ASP ₹73.93", td_left),
+            Paragraph("<b>Product P00084</b><br/>ASP ₹73.93", td_left),
             Paragraph("<b>DAILY</b><br/>Continuous daily pantry momentum", td_left),
             Paragraph("<b>Daily MAPE & WAPE</b><br/>(Daily Resolution)", td_left_bold),
             Paragraph("Dense non-zero staple; percentage error on daily basket replenishment", td_left),
             Paragraph("★ <b>Arth Ridge / SES</b><br/>Lowest Daily RMSE (1,136 INR)", td_left_bold),
         ],
         [
-            Paragraph("<b>P04291</b><br/>Chicken Treats<br/>ASP ₹63.69", td_left),
+            Paragraph("<b>Product P04291</b><br/>ASP ₹63.69", td_left),
             Paragraph("<b>Weekly</b><br/>Filters 60.1% impulse noise", td_left),
             Paragraph("<b>Near-Zero Bias</b><br/>(|Bias| closest to 0)", td_left_bold),
             Paragraph("Preserves retail gross margin so impulse counter never empties", td_left),
@@ -483,7 +483,7 @@ def generate_pdf():
         "Arth Ridge achieves the <b>lowest RMSE (57.98k)</b> and <b>near-zero bias (+0.84k)</b>. Classical models (Holt-Winters, SMA) severely lagged "
         "behind the festival ramp-up, resulting in higher RMSE errors (>65k)."
     )
-    story.extend(render_custom_table("P04606", "Royal Canin / Pedigree 10kg Dry Food", "Bulk Dry Nutrition | ASP ₹2,202.66",
+    story.extend(render_custom_table("P04606", "High-ASP Pallet SKU", "Bulk Replenishment | ASP ₹2,202.66",
                                      "Weekly (W-SUN)", "Lowest RMSE & Low Bias", p1_headers, p1_data, p1_text))
 
     # 2. P02065: Ranked by WAPE / Volume Accuracy
@@ -501,7 +501,7 @@ def generate_pdf():
         "The 8-week SMA achieves the <b>highest volume accuracy (46.00% | lowest WAPE: 54.00%)</b>, closely followed by ARIMA (44.59%). "
         "Simple trailing averages match steady replenishment schedules without model complexity."
     )
-    story.extend(render_custom_table("P02065", "Himalaya / Bio-Groom Hygiene Care", "Grooming & Health | ASP ₹930.40",
+    story.extend(render_custom_table("P02065", "Recurring Consumable", "Store Consumable | ASP ₹930.40",
                                      "Weekly (W-SUN)", "WAPE / Volume Accuracy (100 - WAPE)", p2_headers, p2_data, p2_text))
 
     story.append(PageBreak())
@@ -521,7 +521,7 @@ def generate_pdf():
         "Arth Ridge achieves the <b>lowest MAE (15.74k)</b> and <b>lowest RMSE (18.65k)</b>. By capturing monthly salary payday surges across every quarter, "
         "it prevents large unit forecasting errors."
     )
-    story.extend(render_custom_table("P01032", "Savic / Ferplast Luxury Orthopedic Crate", "Capital Luxury Goods | ASP ₹12,654.93",
+    story.extend(render_custom_table("P01032", "Capital High-Ticket SKU", "Capital Durable | ASP ₹12,654.93",
                                      "Weekly (W-SUN)", "Lowest MAE & Controlled Bias", p3_headers, p3_data, p3_text))
 
     # 4. P00084: DAILY INTERVAL, Ranked by Daily MAPE
@@ -541,7 +541,7 @@ def generate_pdf():
         "Among models providing continuous daily replenishment forecasts, <b>Arth Daily Ridge achieves lowest RMSE (1,136 INR)</b> "
         "and balanced daily bias (+68 INR), accurately capturing weekday pantry replenishment."
     )
-    story.extend(render_custom_table("P00084", "Royal Canin Gravy Wet Food Pouches", "Fast-Moving Grocery | ASP ₹73.93",
+    story.extend(render_custom_table("P00084", "Continuous FMCG Staple", "Fast-Moving Staple | ASP ₹73.93",
                                      "DAILY Interval (Dedicated)", "Daily MAPE & Daily WAPE", p4_headers, p4_data, p4_text))
 
     # 5. P04291: Ranked by Near-Zero Bias
@@ -559,7 +559,7 @@ def generate_pdf():
         "The primary risk is margin erosion from over-ordering or empty checkout jars from under-ordering. "
         "<b>8-Week SMA achieves the closest near-zero bias (-0.13k)</b> and lowest WAPE (72.12%), ensuring balanced store stock."
     )
-    story.extend(render_custom_table("P04291", "Gnawlers / JerHigh Chicken Treats", "Impulse Checkout FMCG | ASP ₹63.69",
+    story.extend(render_custom_table("P04291", "Low-Ticket Impulse SKU", "Impulse Checkout Item | ASP ₹63.69",
                                      "Weekly (W-SUN)", "Near-Zero Bias (|Bias| closest to 0)", p5_headers, p5_data, p5_text))
 
     # SECTION 3: VIVA DEFENSE SUMMARY

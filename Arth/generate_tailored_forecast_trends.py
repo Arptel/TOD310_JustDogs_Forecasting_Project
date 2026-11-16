@@ -71,11 +71,11 @@ ASP_DICT = {
 }
 
 PRODUCT_NAMES = {
-    "P04606": "Royal Canin / Pedigree 10kg Premium Food",
-    "P02065": "Himalaya / Bio-Groom Grooming & Hygiene",
-    "P01032": "Luxury Bedding / European Travel Crates",
-    "P00084": "Pedigree / Whiskas Wet Food Gravy",
-    "P04291": "Barkbone Rawhide Chicken Chew Treats"
+    "P04606": "Product P04606",
+    "P02065": "Product P02065",
+    "P01032": "Product P01032",
+    "P00084": "Product P00084",
+    "P04291": "Product P04291"
 }
 
 CHAMPION_MODELS = {
@@ -177,7 +177,7 @@ ax.annotate('Raksha Bandhan & Dog Day Surge\n(Aug 2025 Festival Prep)',
             fontsize=8.5, fontweight='bold', color='#92400e',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#fef3c7', edgecolor='#f59e0b', alpha=0.9))
 
-ax.set_title('P04606 (Royal Canin / Pedigree 10kg Bulk Food) — Out-of-Sample Sales Trend Line\nChampion Model: ★ Arth Event-Aware Ridge (Weekly Aggregated, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
+ax.set_title('Product P04606 — Out-of-Sample Sales Trend Line\nChampion Model: ★ Arth Event-Aware Ridge (Weekly Aggregated, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
 ax.set_ylabel('Weekly Sales (Thousands of INR | k₹)', fontsize=9.5, fontweight='bold')
 ax.set_xlabel('Timeline (Historical 2024–2025 to Future Q3 2025)', fontsize=9.5, fontweight='bold')
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
@@ -237,7 +237,7 @@ ax.fill_between(weekly_pred_p02065.index,
                 color='#10b981', alpha=0.18, label='80% Forecast Buffer (Salon Throughput)')
 
 ax.axvline(x=pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.5, label='Forecast Start (1-Jun-2025)')
-ax.set_title('P02065 (Himalaya / Bio-Groom Hygiene) — Out-of-Sample Sales Trend Line\nChampion Model: SMA (8-Week Recursive Moving Average, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
+ax.set_title('Product P02065 — Out-of-Sample Sales Trend Line\nChampion Model: SMA (8-Week Recursive Moving Average, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
 ax.set_ylabel('Weekly Sales (Thousands of INR | k₹)', fontsize=9.5, fontweight='bold')
 ax.set_xlabel('Timeline (Historical 2024–2025 to Future Q3 2025)', fontsize=9.5, fontweight='bold')
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
@@ -327,7 +327,7 @@ ax.annotate('Salary Payday Surge Window\n(Month-End Salary Clustering)',
             fontsize=8.5, fontweight='bold', color='#5b21b6',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#ede9fe', edgecolor='#8b5cf6', alpha=0.9))
 
-ax.set_title('P01032 (Savic / Ferplast Luxury Orthopedic Crate ₹12.6k) — Out-of-Sample Sales Trend Line\nChampion Model: ★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
+ax.set_title('Product P01032 — Out-of-Sample Sales Trend Line\nChampion Model: ★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
 ax.set_ylabel('Weekly Sales (Thousands of INR | k₹)', fontsize=9.5, fontweight='bold')
 ax.set_xlabel('Timeline (Historical 2024–2025 to Future Q3 2025)', fontsize=9.5, fontweight='bold')
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
@@ -409,7 +409,7 @@ ax.fill_between(pred_s_p00084.index,
                 color='#10b981', alpha=0.18, label='80% Daily Replenishment Band')
 
 ax.axvline(x=pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.5, label='Forecast Start (1-Jun-2025)')
-ax.set_title('P00084 (Pedigree / Whiskas Wet Food Gravy Pouches) — Out-of-Sample DAILY Sales Trend Line\nChampion Model: ★ Arth Daily Event-Aware Ridge (Strictly Daily Continuous, INR)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
+ax.set_title('Product P00084 — Out-of-Sample DAILY Sales Trend Line\nChampion Model: ★ Arth Daily Event-Aware Ridge (Strictly Daily Continuous, INR)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
 ax.set_ylabel('Daily Sales (INR)', fontsize=9.5, fontweight='bold')
 ax.set_xlabel('Timeline (Historical Spring 2025 to Future Q3 2025 Daily)', fontsize=9.5, fontweight='bold')
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
@@ -467,7 +467,7 @@ ax.fill_between(weekly_pred_p04291.index,
                 color='#10b981', alpha=0.18, label='80% Buffer (Counter Jar Safety Stock)')
 
 ax.axvline(x=pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.5, label='Forecast Start (1-Jun-2025)')
-ax.set_title('P04291 (Barkbone Rawhide Chew Treats ₹64) — Out-of-Sample Sales Trend Line\nChampion Model: SMA (8-Week Moving Average / Low-Bias, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
+ax.set_title('Product P04291 — Out-of-Sample Sales Trend Line\nChampion Model: SMA (8-Week Moving Average / Low-Bias, k₹)', fontsize=11, fontweight='bold', pad=10, color='#0f172a')
 ax.set_ylabel('Weekly Sales (Thousands of INR | k₹)', fontsize=9.5, fontweight='bold')
 ax.set_xlabel('Timeline (Historical 2024–2025 to Future Q3 2025)', fontsize=9.5, fontweight='bold')
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
@@ -489,7 +489,7 @@ axes[0].plot(weekly_hist_p04606.index, weekly_hist_p04606.values, color='#1e3a8a
 axes[0].plot([weekly_hist_p04606.index[-1], weekly_pred_p04606.index[0]], [weekly_hist_p04606.values[-1], weekly_pred_p04606.values[0]], color='#047857', linestyle='--')
 axes[0].plot(weekly_pred_p04606.index, weekly_pred_p04606.values, color='#047857', linewidth=2.0, linestyle='--', marker='o', markersize=4, label='Forecast: Arth Ridge (k₹)')
 axes[0].axvline(pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.2)
-axes[0].set_title('P04606 (10kg Food) | Interval: Weekly | Top Model: ★ Arth Event-Aware Ridge (RMSE 56.47k | Fin Acc 85.0%)', fontsize=9.5, fontweight='bold', color='#1e3a8a')
+axes[0].set_title('Product P04606 | Interval: Weekly | Top Model: ★ Arth Event-Aware Ridge (RMSE 56.47k | Fin Acc 85.0%)', fontsize=9.5, fontweight='bold', color='#1e3a8a')
 axes[0].set_ylabel('k₹ / Week', fontsize=8.5)
 axes[0].legend(loc='upper left', fontsize=7.5)
 
@@ -498,7 +498,7 @@ axes[1].plot(weekly_hist_p02065.index, weekly_hist_p02065.values, color='#0284c7
 axes[1].plot([weekly_hist_p02065.index[-1], weekly_pred_p02065.index[0]], [weekly_hist_p02065.values[-1], weekly_pred_p02065.values[0]], color='#047857', linestyle='--')
 axes[1].plot(weekly_pred_p02065.index, weekly_pred_p02065.values, color='#047857', linewidth=2.0, linestyle='--', marker='s', markersize=4, label='Forecast: SMA 8w (k₹)')
 axes[1].axvline(pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.2)
-axes[1].set_title('P02065 (Grooming Hygiene) | Interval: Weekly | Top Model: SMA 8w (Vol Acc 50.55% | Fin Acc 98.8%)', fontsize=9.5, fontweight='bold', color='#0369a1')
+axes[1].set_title('Product P02065 | Interval: Weekly | Top Model: SMA 8w (Vol Acc 50.55% | Fin Acc 98.8%)', fontsize=9.5, fontweight='bold', color='#0369a1')
 axes[1].set_ylabel('k₹ / Week', fontsize=8.5)
 axes[1].legend(loc='upper left', fontsize=7.5)
 
@@ -507,7 +507,7 @@ axes[2].plot(weekly_hist_p01032.index, weekly_hist_p01032.values, color='#7c3aed
 axes[2].plot([weekly_hist_p01032.index[-1], weekly_pred_p01032.index[0]], [weekly_hist_p01032.values[-1], weekly_pred_p01032.values[0]], color='#047857', linestyle='--')
 axes[2].plot(weekly_pred_p01032.index, weekly_pred_p01032.values, color='#047857', linewidth=2.0, linestyle='--', marker='^', markersize=4, label='Forecast: Arth Ridge (k₹)')
 axes[2].axvline(pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.2)
-axes[2].set_title('P01032 (Luxury Bedding ₹12.6k) | Interval: Weekly | Top Model: ★ Arth Event Ridge (MAE 16.00k | Fin Acc 60.8%)', fontsize=9.5, fontweight='bold', color='#6d28d9')
+axes[2].set_title('Product P01032 | Interval: Weekly | Top Model: ★ Arth Event Ridge (MAE 16.00k | Fin Acc 60.8%)', fontsize=9.5, fontweight='bold', color='#6d28d9')
 axes[2].set_ylabel('k₹ / Week', fontsize=8.5)
 axes[2].legend(loc='upper left', fontsize=7.5)
 
@@ -516,7 +516,7 @@ axes[3].plot(hist_s_p00084.index, hist_s_p00084.values, color='#0284c7', linewid
 axes[3].plot([hist_s_p00084.index[-1], pred_s_p00084.index[0]], [hist_s_p00084.values[-1], pred_s_p00084.values[0]], color='#047857', linestyle='--')
 axes[3].plot(pred_s_p00084.index, pred_s_p00084.values, color='#047857', linewidth=1.8, linestyle='--', label='Daily Forecast: Arth Ridge (INR)')
 axes[3].axvline(pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.2)
-axes[3].set_title('P00084 (Wet Food Gravy) | Interval: STRICTLY DAILY | Top Model: ★ Arth Daily Ridge (Daily RMSE 1,136.91 | Fin Acc 89.0%)', fontsize=9.5, fontweight='bold', color='#0284c7')
+axes[3].set_title('Product P00084 | Interval: STRICTLY DAILY | Top Model: ★ Arth Daily Ridge (Daily RMSE 1,136.91 | Fin Acc 89.0%)', fontsize=9.5, fontweight='bold', color='#0284c7')
 axes[3].set_ylabel('Daily INR', fontsize=8.5)
 axes[3].legend(loc='upper left', fontsize=7.5)
 
@@ -525,7 +525,7 @@ axes[4].plot(weekly_hist_p04291.index, weekly_hist_p04291.values, color='#ea580c
 axes[4].plot([weekly_hist_p04291.index[-1], weekly_pred_p04291.index[0]], [weekly_hist_p04291.values[-1], weekly_pred_p04291.values[0]], color='#047857', linestyle='--')
 axes[4].plot(weekly_pred_p04291.index, weekly_pred_p04291.values, color='#047857', linewidth=2.0, linestyle='--', marker='d', markersize=4, label='Forecast: SMA 8w (k₹)')
 axes[4].axvline(pd.Timestamp("2025-06-01"), color='#dc2626', linestyle=':', linewidth=1.2)
-axes[4].set_title('P04291 (Chew Treats ₹64) | Interval: Weekly | Top Model: SMA 8w (Near-Zero Bias: 0.11k | Fin Acc 96.9%)', fontsize=9.5, fontweight='bold', color='#c2410c')
+axes[4].set_title('Product P04291 | Interval: Weekly | Top Model: SMA 8w (Near-Zero Bias: 0.11k | Fin Acc 96.9%)', fontsize=9.5, fontweight='bold', color='#c2410c')
 axes[4].set_ylabel('k₹ / Week', fontsize=8.5)
 axes[4].set_xlabel('Timeline (2024 to Q3 2025)', fontsize=9, fontweight='bold')
 axes[4].legend(loc='upper left', fontsize=7.5)

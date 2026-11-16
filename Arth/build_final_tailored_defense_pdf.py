@@ -241,19 +241,20 @@ def generate_pdf():
         "<b>EXECUTIVE BLUEPRINT & CORE METHODOLOGICAL CONTRIBUTION:</b><br/>"
         "In enterprise omnichannel retail demand planning, enforcing a single rigid time interval, a one-size-fits-all train/test split, "
         "or a single accuracy metric across disparate merchandise categories is fundamentally flawed. "
-        "This project establishes a <b>tailored, SKU-specific forecasting framework</b> grounded in supply chain economics:<br/>"
-        "<b>1. Tailored Time Intervals:</b> Bulk food (P04606), hygiene (P02065), luxury crates (P01032), and treats (P04291) "
+        "The raw dataset provided contains <b>anonymized Product IDs (P04606, P02065, P01032, P00084, P04291)</b> without descriptive names. "
+        "This project establishes a <b>tailored, SKU-specific forecasting framework</b> grounded strictly in empirical data properties and supply chain economics:<br/>"
+        "<b>1. Tailored Time Intervals:</b> SKUs P04606, P02065, P01032, and P04291 "
         "are modelled at <b>Weekly resolution</b> to eliminate intra-week appointment swings and zero-sales Poisson noise. "
-        "Conversely, grocery wet food (P00084) is modelled at <b>Strictly Daily resolution</b> to capture daily shelf-depletion "
+        "Conversely, SKU P00084 is modelled at <b>Strictly Daily resolution</b> to capture daily shelf-depletion "
         "and immediate promotional autoregressive momentum.<br/>"
         "<b>2. Operationally-Grounded Splits:</b> Replaced static holdouts with <b>Quarterly Walk-Forward Rollouts (90-day cycles)</b> "
-        "for macro manufacturer contracts (P04606), <b>Monthly Sliding Folds (4-week cycles)</b> for store salon periodic review (P02065, P04291), "
-        "and <b>Cumulative Lead-Time Horizons (DL = 14–21 days)</b> for imported capital goods (P01032).<br/>"
+        "for macro manufacturer replenishment contracts (P04606), <b>Monthly Sliding Folds (4-week cycles)</b> for store salon periodic review (P02065, P04291), "
+        "and <b>Cumulative Lead-Time Horizons (DL = 14–21 days)</b> for high-ticket capital goods (P01032).<br/>"
         "<b>3. Dual-Accuracy Lens (Operational Risk vs. Financial Accuracy):</b> We compute both <b>Operational Volume Accuracy (100 - WAPE)</b> "
         "and <b>Net Financial Accuracy (1 - |sum error| / sum actual)</b> across all models. While Financial Accuracy evaluates net "
         "quarterly cash flow, <b>model selection is strictly guided by each SKU's designated operational risk factor</b>: "
-        "<b>RMSE</b> for bulk food pallet risks, <b>WAPE/Volume Accuracy</b> for salon appointments, <b>MAE</b> for Rs. 12.6k crates, "
-        "<b>Daily MAPE/WAPE</b> for grocery pouches, and <b>Near-Zero Bias</b> for impulse treats.<br/>"
+        "<b>RMSE</b> for bulk pallet risks, <b>WAPE/Volume Accuracy</b> for recurring service demand, <b>MAE</b> for Rs. 12.6k capital goods, "
+        "<b>Daily MAPE/WAPE</b> for high-velocity grocery replenishment, and <b>Near-Zero Bias</b> for impulse items.<br/>"
         "<b>4. Out-of-Sample Trend Line Projections:</b> Each product features a continuous trend line forecast extending into missing/future "
         "months (June 1 through September 30, 2025) equipped with 80% confidence bands and Indian calendar event adjustments."
     )
@@ -270,12 +271,12 @@ def generate_pdf():
     story.append(Spacer(1, 4))
 
     story.append(Paragraph("1. Master Product-Tailored Decision Matrix", h1_style))
-    m_headers = ["SKU / Product", "Time Interval", "Train/Test Division", "Best Operational Factor", "Empirical Champion", "Key Factor Score", "Fin Acc (%)"]
+    m_headers = ["SKU / Product ID", "Time Interval", "Train/Test Division", "Best Operational Factor", "Empirical Champion", "Key Factor Score", "Fin Acc (%)"]
     t_m_data = [[Paragraph(f"<b>{h}</b>", th_style) for h in m_headers]]
 
     matrix_rows = [
         [
-            Paragraph("<b>P04606</b><br/>Pedigree 10kg Food<br/>ASP Rs. 2,202.66", td_left),
+            Paragraph("<b>Product P04606</b><br/>ASP Rs. 2,202.66", td_left),
             Paragraph("<b>Weekly</b><br/>(W-SUN)", td_style),
             Paragraph("<b>4-Quarter Rollout</b><br/>(90d Walk-Forward)", td_style),
             Paragraph("<b>Lowest RMSE</b><br/>& Low Bias", td_style),
@@ -284,7 +285,7 @@ def generate_pdf():
             Paragraph("<b>85.0% - 91.9%</b>", td_style)
         ],
         [
-            Paragraph("<b>P02065</b><br/>Grooming Hygiene<br/>ASP Rs. 492.35", td_left),
+            Paragraph("<b>Product P02065</b><br/>ASP Rs. 492.35", td_left),
             Paragraph("<b>Weekly</b><br/>(W-SUN)", td_style),
             Paragraph("<b>Monthly Sliding</b><br/>(4-Wk Walk-Forward)", td_style),
             Paragraph("<b>Volume Accuracy</b><br/>(100 - WAPE)", td_style),
@@ -293,7 +294,7 @@ def generate_pdf():
             Paragraph("<b>70.0% - 98.8%</b>", td_style)
         ],
         [
-            Paragraph("<b>P01032</b><br/>Luxury Bedding Crate<br/>ASP Rs. 12,654.93", td_left),
+            Paragraph("<b>Product P01032</b><br/>ASP Rs. 12,654.93", td_left),
             Paragraph("<b>Weekly</b><br/>(Lead-Time Group)", td_style),
             Paragraph("<b>Cumulative Lead-Time</b><br/>(DL = 14–21d Horizon)", td_style),
             Paragraph("<b>Lowest MAE</b><br/>(Physical Units / Rs.)", td_style),
@@ -302,7 +303,7 @@ def generate_pdf():
             Paragraph("<b>60.8% - 71.8%</b>", td_style)
         ],
         [
-            Paragraph("<b>P00084</b><br/>Wet Food Gravy<br/>ASP Rs. 74.15", td_left),
+            Paragraph("<b>Product P00084</b><br/>ASP Rs. 74.15", td_left),
             Paragraph("<b>Strictly Daily</b><br/>(Daily Horizon)", td_style),
             Paragraph("<b>Daily Rolling</b><br/>(14-Day Strides)", td_style),
             Paragraph("<b>Daily MAPE</b><br/>& Daily WAPE", td_style),
@@ -311,7 +312,7 @@ def generate_pdf():
             Paragraph("<b>62.7% - 89.0%</b>", td_style)
         ],
         [
-            Paragraph("<b>P04291</b><br/>Chew Treats Rs. 64<br/>ASP Rs. 64.08", td_left),
+            Paragraph("<b>Product P04291</b><br/>ASP Rs. 64.08", td_left),
             Paragraph("<b>Weekly</b><br/>(W-SUN)", td_style),
             Paragraph("<b>Monthly Periodic</b><br/>((R, S) Horizon)", td_style),
             Paragraph("<b>Near-Zero Bias</b><br/>(|Bias| -> 0)", td_style),
@@ -339,11 +340,11 @@ def generate_pdf():
 
     story.append(Paragraph("2. Dedicated Time Interval Selection Rationale ('Why' vs. 'Why NOT Others')", h1_style))
     int_rationales = [
-        "<b>P04606 (10kg Food) — Weekly:</b> Master distributors (Royal Canin, Mars Petcare) enforce weekly pallet replenishment cycles. Aggregating to weekly aligns with warehouse storage bays. <i>Why NOT Daily:</i> 45.6% zero-sales days create severe fractional unit noise (e.g. predicting 0.22 bags/day). <i>Why NOT Monthly:</i> Monthly buckets blur the acute 7-day Diwali festival ramp-up, causing major stockouts.",
-        "<b>P02065 (Grooming Hygiene) — Weekly:</b> Store grooming salons experience extreme weekend rushes (>45% weekly volume on Sat/Sun). Weekly aggregation completely neutralizes this intra-week sawtooth oscillation, transforming the series into a mathematically stationary process (ADF p = 0.0001). <i>Why NOT Daily:</i> Daily modeling overfits to Monday lulls and Saturday peaks. <i>Why NOT Monthly:</i> Masks mid-month shampoo stockouts when salon booking surges deplete front shelves.",
-        "<b>P01032 (Luxury Bedding Rs. 12.6k) — Weekly:</b> High-ticket capital goods suffer from 69.1% zero-sales days. Weekly grouping aggregates sporadic purchases into predictable demand clusters. <i>Why NOT Daily:</i> Daily zero-inflation causes models to hallucinate fractional crates, invalidating integer inventory orders. <i>Why NOT Monthly:</i> Monthly aggregation obscures critical salary payday clusters (28th to 3rd).",
-        "<b>P00084 (Wet Food Gravy Pouches) — STRICTLY DAILY:</b> High-velocity FMCG staple purchased continuously. Daily modeling preserves autoregressive momentum (lag_1, lag_7), day-of-week replenishment cycles, and immediate promotional responses. <i>Why NOT Weekly:</i> Blurs store-level replenishment velocity from backroom stock to front grocery shelves. <i>Why NOT Monthly:</i> Destroys all operational granularity required for lean just-in-time replenishment.",
-        "<b>P04291 (Rawhide Chew Treats Rs. 64) — Weekly:</b> Checkout counter impulse item with 60.1% zero-sales days. Weekly grouping smooths cashier impulse upselling randomness. <i>Why NOT Daily:</i> Daily Poisson arrival variance creates extreme forecasting instability at the billing counter. <i>Why NOT Monthly:</i> Too coarse to maintain the 2-week glass counter display jar safety stock."
+        "<b>Product P04606 (ASP Rs. 2,202.66) — Weekly:</b> Master supplier agreements enforce weekly pallet replenishment cycles. Aggregating to weekly aligns with warehouse storage bays. <i>Why NOT Daily:</i> 45.6% zero-sales days create severe fractional unit noise (e.g. predicting 0.22 units/day). <i>Why NOT Monthly:</i> Monthly buckets blur the acute 7-day festival ramp-up, causing major stockouts.",
+        "<b>Product P02065 (ASP Rs. 492.35) — Weekly:</b> In-store service consumables experience weekend booking rushes (>45% weekly volume on Sat/Sun). Weekly aggregation completely neutralizes this intra-week sawtooth oscillation, transforming the series into a mathematically stationary process (ADF p = 0.0001). <i>Why NOT Daily:</i> Daily modeling overfits to Monday lulls and Saturday peaks. <i>Why NOT Monthly:</i> Masks mid-month stockouts when booking surges deplete front shelves.",
+        "<b>Product P01032 (ASP Rs. 12,654.93) — Weekly:</b> High-ticket capital goods suffer from 69.1% zero-sales days. Weekly grouping aggregates sporadic purchases into predictable demand clusters. <i>Why NOT Daily:</i> Daily zero-inflation causes models to hallucinate fractional units, invalidating integer inventory orders. <i>Why NOT Monthly:</i> Monthly aggregation obscures critical salary payday clusters (28th to 3rd).",
+        "<b>Product P00084 (ASP Rs. 74.15) — STRICTLY DAILY:</b> High-velocity FMCG staple purchased continuously. Daily modeling preserves autoregressive momentum (lag_1, lag_7), day-of-week replenishment cycles, and immediate promotional responses. <i>Why NOT Weekly:</i> Blurs store-level replenishment velocity from backroom stock to front shelves. <i>Why NOT Monthly:</i> Destroys all operational granularity required for lean just-in-time replenishment.",
+        "<b>Product P04291 (ASP Rs. 64.08) — Weekly:</b> Checkout counter impulse item with 60.1% zero-sales days. Weekly grouping smooths cashier impulse upselling randomness. <i>Why NOT Daily:</i> Daily Poisson arrival variance creates extreme forecasting instability at the billing counter. <i>Why NOT Monthly:</i> Too coarse to maintain the 2-week front counter display safety stock."
     ]
     for r in int_rationales:
         story.append(Paragraph(f"• {r}", bullet_style))
@@ -355,11 +356,11 @@ def generate_pdf():
     # ==========================================
     story.append(Paragraph("3. Optimal Train-Test Division Strategy ('Why' vs. 'Why NOT Others')", h1_style))
     split_rationales = [
-        "<b>P04606 (10kg Food) — 4-Quarter Rollout (90-Day Walk-Forward):</b> Aligns with corporate quarterly master purchase orders (POs) negotiated with pet food manufacturers. Evaluates model robustness across all four climatic and cultural seasons (Q3 Monsoon, Q4 Diwali, Q1 Winter, Q2 Summer). <i>Why NOT Fixed 13-Week Holdout:</i> A single spring holdout fails to test the explosive 4.3× Diwali surge, leaving the business blind to festival peak risk. <i>Why NOT Daily Walk-Forward:</i> High-frequency daily splits are irrelevant for pallet-scale manufacturing supply contracts.",
-        "<b>P02065 (Grooming) — Monthly Rolling Walk-Forward (4-Week Sliding Window):</b> Aligns with the grooming salon's monthly review policy (R, s, S). Consumable shampoo levels are reviewed every 30 days against appointment logs. <i>Why NOT 90-Day Rollout:</i> On a strictly stationary series (ADF p = 0.0001), forecasting 90 days out introduces needless multi-step parameter drift. <i>Why NOT Random Split:</i> Breaks temporal ordering and causes future appointment leakage.",
-        "<b>P01032 (Luxury Beds) — Cumulative Lead-Time Horizon (DL = 14–21 Days):</b> Imported crates carry a 2–3 week supplier lead time. In supply chain inventory control, safety stock is sized against total demand over lead time (SS = z * sigma_L). Validating over DL directly verifies safety stock buffer sizing. <i>Why NOT Daily Split:</i> If a customer purchases an expensive crate 3 days late, a daily split flags two 100% errors, penalizing algorithms that correctly stocked the unit. <i>Why NOT 90-Day Fixed Split:</i> Freezes Rs. 12,654 capital in excess stock if high-ticket demand drops.",
-        "<b>P00084 (Wet Food) — High-Frequency Daily Rolling (14-Day Walk-Forward):</b> Tests short-term daily shelf restocking against weekly depot deliveries. <i>Why NOT 90-Day Rollout:</i> Long horizons compound recursive daily lag errors, causing forecasts to collapse to the mean. <i>Why NOT Monthly Split:</i> Completely masks weekday pantry replenishment dynamics.",
-        "<b>P04291 (Treats) — Monthly Periodic Review (R, S) Horizon:</b> Store managers review counter jars at month-end and top up to order-up-to level S. <i>Why NOT Daily/Quarterly:</i> Eliminates daily noise without locking store capital into quarterly commitments."
+        "<b>Product P04606 — 4-Quarter Rollout (90-Day Walk-Forward):</b> Aligns with corporate quarterly master purchase orders (POs) negotiated with suppliers. Evaluates model robustness across all four climatic and cultural seasons (Q3 Monsoon, Q4 Festive Rush, Q1 Winter, Q2 Summer). <i>Why NOT Fixed 13-Week Holdout:</i> A single spring holdout fails to test the explosive 4.3x Q4 festival surge, leaving the business blind to peak seasonal risk. <i>Why NOT Daily Walk-Forward:</i> High-frequency daily splits are irrelevant for pallet-scale manufacturing supply contracts.",
+        "<b>Product P02065 — Monthly Rolling Walk-Forward (4-Week Sliding Window):</b> Aligns with the periodic review inventory policy (R, s, S). Consumable stock levels are reviewed every 30 days against appointment logs. <i>Why NOT 90-Day Rollout:</i> On a strictly stationary series (ADF p = 0.0001), forecasting 90 days out introduces needless multi-step parameter drift. <i>Why NOT Random Split:</i> Breaks temporal ordering and causes future data leakage.",
+        "<b>Product P01032 — Cumulative Lead-Time Horizon (DL = 14–21 Days):</b> High-value items carry a 2–3 week supplier lead time. In supply chain inventory control, safety stock is sized against total demand over lead time (SS = z * sigma_L). Validating over DL directly verifies safety stock buffer sizing. <i>Why NOT Daily Split:</i> If a customer purchases an expensive unit 3 days late, a daily split flags two 100% errors, penalizing algorithms that correctly stocked the unit. <i>Why NOT 90-Day Fixed Split:</i> Freezes Rs. 12,654 capital in excess stock if high-ticket demand drops.",
+        "<b>Product P00084 — High-Frequency Daily Rolling (14-Day Walk-Forward):</b> Tests short-term daily shelf restocking against depot deliveries. <i>Why NOT 90-Day Rollout:</i> Long horizons compound recursive daily lag errors, causing forecasts to collapse to the mean. <i>Why NOT Monthly Split:</i> Completely masks weekday shelf replenishment dynamics.",
+        "<b>Product P04291 — Monthly Periodic Review (R, S) Horizon:</b> Store managers review counter display stock at month-end and top up to order-up-to level S. <i>Why NOT Daily/Quarterly:</i> Eliminates daily noise without locking store capital into quarterly commitments."
     ]
     for r in split_rationales:
         story.append(Paragraph(f"• {r}", bullet_style))
@@ -367,11 +368,11 @@ def generate_pdf():
 
     story.append(Paragraph("4. Designated Best Evaluation Factor per SKU ('Why' vs. 'Why NOT Others')", h1_style))
     fac_rationales = [
-        "<b>P04606 (10kg Food) — Lowest RMSE & Low Bias:</b> Bulk food stockouts cause customers to switch brands permanently (churn). RMSE penalizes large forecast misses quadratically (e_t^2). Low bias prevents warehouse overflow. <i>Why NOT MAPE:</i> Low sales in off-peak weeks cause MAPE to divide by small denominators and explode artificially (>150%). <i>Why NOT Selecting by Raw Fin Acc:</i> While Naive and SES achieve >97% Fin Acc, their weekly WAPE exceeds 40%–72%, concealing major timing errors during Diwali week.",
-        "<b>P02065 (Grooming) — Volume Accuracy (100 - WAPE):</b> Total shampoo volume must match salon grooming appointment throughput. WAPE measures aggregate volume matching without quadratic distortion. <i>Why NOT RMSE:</i> Non-quadratic risk profile; a minor unit miss on Tuesday does not shut down the grooming salon. <i>Why NOT MAPE:</i> Zero-sales and low-volume weeks distort percentage error.",
-        "<b>P01032 (Luxury Beds) — Lowest MAE (Physical Units / Rs.) & Controlled Negative Bias:</b> At Rs. 12,654/unit, holding excess stock locks up critical capital. MAE measures exact physical unit deviation. <i>Why NOT MAPE:</i> 69.1% zero-sales days make MAPE mathematically undefined (0/0) or explode to thousands of percent on 1-unit sales. <i>Why NOT RMSE:</i> Outlier quadratic penalties distort the baseline order level for intermittent goods.",
-        "<b>P00084 (Wet Food) — Daily MAPE & Daily WAPE:</b> Dense, continuous non-zero grocery transactions where percentage error directly informs daily replenishment orders. <i>Why NOT Selecting by Raw Fin Acc:</i> Daily moving averages achieve 95%–99% Financial Accuracy due to long-term netting, but their daily shelf-replenishment MAE is significantly worse than Daily Ridge.",
-        "<b>P04291 (Treats) — Near-Zero Bias (|Bias| -> 0):</b> Checkout impulse items deliver 60%+ gross profit margins. Negative bias causes empty display jars (lost impulse sales); positive bias causes rawhide expiry. <i>Why NOT RMSE:</i> Treating checkout variance quadratically causes models to over-react to single-day counter surges."
+        "<b>Product P04606 — Lowest RMSE & Low Bias:</b> Bulk stockouts cause customers to switch retail providers permanently (churn). RMSE penalizes large forecast misses quadratically (e_t^2). Low bias prevents warehouse overflow. <i>Why NOT MAPE:</i> Low sales in off-peak weeks cause MAPE to divide by small denominators and explode artificially (>150%). <i>Why NOT Selecting by Raw Fin Acc:</i> While Naive and SES achieve >97% Fin Acc, their weekly WAPE exceeds 40%–72%, concealing major timing errors during peak surge weeks.",
+        "<b>Product P02065 — Volume Accuracy (100 - WAPE):</b> Total consumable volume must match store operational throughput. WAPE measures aggregate volume matching without quadratic distortion. <i>Why NOT RMSE:</i> Non-quadratic risk profile; a minor unit miss on Tuesday does not shut down store operations. <i>Why NOT MAPE:</i> Zero-sales and low-volume weeks distort percentage error.",
+        "<b>Product P01032 — Lowest MAE (Physical Units / Rs.) & Controlled Negative Bias:</b> At Rs. 12,654/unit, holding excess stock locks up critical capital. MAE measures exact physical unit deviation. <i>Why NOT MAPE:</i> 69.1% zero-sales days make MAPE mathematically undefined (0/0) or explode to thousands of percent on 1-unit sales. <i>Why NOT RMSE:</i> Outlier quadratic penalties distort the baseline order level for intermittent goods.",
+        "<b>Product P00084 — Daily MAPE & Daily WAPE:</b> Dense, continuous non-zero grocery transactions where percentage error directly informs daily replenishment orders. <i>Why NOT Selecting by Raw Fin Acc:</i> Daily moving averages achieve 95%–99% Financial Accuracy due to long-term netting, but their daily shelf-replenishment MAE is significantly worse than Daily Ridge.",
+        "<b>Product P04291 — Near-Zero Bias (|Bias| -> 0):</b> Checkout impulse items deliver high gross profit margins. Negative bias causes empty display jars (lost sales); positive bias causes excess inventory expiry. <i>Why NOT RMSE:</i> Treating checkout variance quadratically causes models to over-react to single-day counter surges."
     ]
     for r in fac_rationales:
         story.append(Paragraph(f"• {r}", bullet_style))
@@ -393,10 +394,10 @@ def generate_pdf():
     # ==========================================
     # HELPER FOR PRODUCT DEDICATED PAGE
     # ==========================================
-    def build_product_page(pid, pname, meta_desc, interval_lbl, factor_lbl, headers, data_rows,
+    def build_product_page(pid, meta_desc, interval_lbl, factor_lbl, headers, data_rows,
                            analysis_text, plot_filename, forecast_records, rec_notes):
         page_elements = []
-        header_text = f"<b>{pid}: {pname}</b> | <i>{meta_desc}</i><br/><b>Interval:</b> {interval_lbl} | <b>Operational Split:</b> {meta_desc.split('|')[0].strip()} | <b>Primary Selection Factor:</b> {factor_lbl}"
+        header_text = f"<b>Product {pid}</b> | <i>{meta_desc}</i><br/><b>Interval:</b> {interval_lbl} | <b>Operational Split:</b> {meta_desc.split('|')[0].strip()} | <b>Primary Selection Factor:</b> {factor_lbl}"
         page_elements.append(Paragraph(header_text, h2_style))
         page_elements.append(Spacer(1, 2))
 
@@ -470,7 +471,7 @@ def generate_pdf():
         return page_elements
 
     # ==========================================
-    # PAGE 3: SKU 1 - P04606 (10kg Food)
+    # PAGE 3: SKU 1 - P04606
     # ==========================================
     p1_headers = ["Rank", "Model", "RMSE (Rs.k) [Best]", "Bias (Rs.k)", "MAE (Rs.k)", "WAPE (%)", "Vol Acc (%)", "Fin Acc (%)"]
     p1_data = [
@@ -484,7 +485,7 @@ def generate_pdf():
     p1_text = (
         "<b>Operational Analysis:</b> <b>ARIMA and Arth Event-Aware Ridge</b> provide robust operational forecasting "
         "(RMSE 48.5k–56.5k, Fin Acc 85%–92%). While Naive reflects low error on calmer quarters, Arth Ridge actively captures "
-        "the 4.3× Diwali festival surge via explicit festival dummies, preventing acute stockouts."
+        "the 4.3x Q4 festival surge via explicit calendar dummies, preventing acute stockouts."
     )
     p1_f_recs = [
         {"month": "June 2025", "sales": 188353.19, "units": 86, "asp": 2202.66},
@@ -493,18 +494,18 @@ def generate_pdf():
         {"month": "September 2025", "sales": 283588.16, "units": 129, "asp": 2202.66},
     ]
     p1_notes = [
-        "Baseline post-summer demand; maintain standard 20-bag buffer stock in central hub.",
-        "Early monsoon uptick; increase factory PO by 15% to prepare for regional freight delays.",
-        "Raksha Bandhan & Dog Day surge window; ramp weekly depot shipments to 30 bags/week.",
-        "Pre-Diwali bulk replenishment; lock 35 bags/week manufacturing order to prevent festival stockouts."
+        "Baseline post-summer demand; maintain standard 20-unit buffer stock in central hub.",
+        "Early monsoon uptick; increase supplier PO by 15% to prepare for regional freight delays.",
+        "Pre-festival surge window; ramp weekly depot shipments to 30 units/week.",
+        "Peak festival replenishment; lock 35 units/week manufacturing order to prevent stockouts."
     ]
-    story.extend(build_product_page("P04606", "Royal Canin / Pedigree 10kg Premium Food",
-                                    "Bulk Dry Nutrition | 4-Quarter Rollout", "Weekly (W-SUN)",
+    story.extend(build_product_page("P04606",
+                                    "High-ASP Pallet Replenishment | 4-Quarter Rollout", "Weekly (W-SUN)",
                                     "Lowest RMSE & Low Bias", p1_headers, p1_data, p1_text,
                                     "forecast_trend_P04606.png", p1_f_recs, p1_notes))
 
     # ==========================================
-    # PAGE 4: SKU 2 - P02065 (Grooming Hygiene)
+    # PAGE 4: SKU 2 - P02065
     # ==========================================
     p2_headers = ["Rank", "Model", "Vol Acc (%) [Best]", "WAPE (%) [Best]", "RMSE (Rs.k)", "MAE (Rs.k)", "Bias (Rs.k)", "Fin Acc (%)"]
     p2_data = [
@@ -517,8 +518,8 @@ def generate_pdf():
     ]
     p2_text = (
         "<b>Operational Analysis:</b> <b>ARIMA(1,0,1) and SMA (8w) win Rank 1 & 2</b> with ~51% Volume Accuracy and up to "
-        "98.8% Financial Accuracy. Because weekly hygiene demand is strictly stationary (ADF p = 0.0001), moving averages and "
-        "simple autoregressive models deliver optimal salon throughput without overfitting."
+        "98.8% Financial Accuracy. Because weekly demand is strictly stationary (ADF p = 0.0001), moving averages and "
+        "simple autoregressive models deliver optimal throughput without overfitting."
     )
     p2_f_recs = [
         {"month": "June 2025", "sales": 181642.18, "units": 369, "asp": 492.35},
@@ -527,18 +528,18 @@ def generate_pdf():
         {"month": "September 2025", "sales": 179404.45, "units": 364, "asp": 492.35},
     ]
     p2_notes = [
-        "Stable baseline consumption; issue standard monthly salon stock requisition of 370 bottles.",
-        "Monsoon tick & flea preventative surge; dispatch 95 bottles weekly to flagship store salons.",
-        "Peak grooming salon bookings; maintain continuous reorder point of 40 bottles per store.",
-        "Post-monsoon grooming normalization; align inventory replenishment strictly to 85 bottles/week."
+        "Stable baseline consumption; issue standard monthly stock requisition of 370 units.",
+        "Seasonal preventative surge; dispatch 95 units weekly to flagship store locations.",
+        "Peak booking demand; maintain continuous reorder point of 40 units per store.",
+        "Post-monsoon normalization; align inventory replenishment strictly to 85 units/week."
     ]
-    story.extend(build_product_page("P02065", "Himalaya / Bio-Groom Grooming & Hygiene",
-                                    "Grooming Consumable | Monthly Sliding Folds", "Weekly (W-SUN)",
+    story.extend(build_product_page("P02065",
+                                    "Recurring Service Consumable | Monthly Sliding Folds", "Weekly (W-SUN)",
                                     "Highest Volume Accuracy (100 - WAPE)", p2_headers, p2_data, p2_text,
                                     "forecast_trend_P02065.png", p2_f_recs, p2_notes))
 
     # ==========================================
-    # PAGE 5: SKU 3 - P01032 (Luxury Bedding)
+    # PAGE 5: SKU 3 - P01032
     # ==========================================
     p3_headers = ["Rank", "Model", "MAE (Rs.k) [Best]", "Bias (Rs.k)", "RMSE (Rs.k)", "WAPE (%)", "Vol Acc (%)", "Fin Acc (%)"]
     p3_data = [
@@ -551,7 +552,7 @@ def generate_pdf():
         [7, "ARIMA(1,0,1)", "20.46", "+17.90", "24.59", "98.06%", "1.94%", "14.20%"]
     ]
     p3_text = (
-        "<b>Operational Analysis:</b> <b>Croston SBA, SES, and Arth Event-Aware Ridge</b> lead the luxury crate benchmark "
+        "<b>Operational Analysis:</b> <b>Croston SBA, SES, and Arth Event-Aware Ridge</b> lead the benchmark "
         "with MAE ~15.0k–16.0k and solid Financial Accuracy (60.8%–71.8%). By capturing monthly salary payday surges across every quarter "
         "and dampening intermittent noise, dead capital risk is minimized."
     )
@@ -562,18 +563,18 @@ def generate_pdf():
         {"month": "September 2025", "sales": 75123.74, "units": 6, "asp": 12654.93},
     ]
     p3_notes = [
-        "Enforce strict 6-unit monthly cap; hold 2 units at hub warehouse and 4 units across flagship stores.",
-        "Payday surge replenishment (28th–3rd); reorder 1-2 units only upon verified omnichannel customer checkout.",
-        "Monsoon pet travel crate promotions; maintain safety buffer of 2 crates to prevent Rs. 12.6k dead stock.",
-        "Pre-Diwali luxury gifting prep; confirm lead-time order of 6 units with European crate importer."
+        "Enforce strict 6-unit monthly cap; hold 2 units at hub warehouse and 4 units across stores.",
+        "Payday surge replenishment (28th–3rd); reorder 1-2 units only upon verified customer checkout.",
+        "Seasonal promotions; maintain safety buffer of 2 units to prevent Rs. 12.6k dead stock.",
+        "Pre-festival luxury prep; confirm lead-time order of 6 units with high-value supplier."
     ]
-    story.extend(build_product_page("P01032", "Luxury Bedding / European Travel Crates",
-                                    "Capital Luxury Goods | Cumulative Lead-Time", "Weekly (Lead-Time Group)",
+    story.extend(build_product_page("P01032",
+                                    "High-Ticket Capital Durable | Cumulative Lead-Time", "Weekly (Lead-Time Group)",
                                     "Lowest MAE (Physical Units / Rs.)", p3_headers, p3_data, p3_text,
                                     "forecast_trend_P01032.png", p3_f_recs, p3_notes))
 
     # ==========================================
-    # PAGE 6: SKU 4 - P00084 (Wet Food Gravy)
+    # PAGE 6: SKU 4 - P00084 (DAILY)
     # ==========================================
     p4_headers = ["Rank", "Model (Evaluated on DAILY)", "Daily MAPE [Best]", "Daily WAPE", "Daily RMSE (Rs.)", "Daily MAE (Rs.)", "Daily Bias (Rs.)", "Fin Acc (%)"]
     p4_data = [
@@ -597,18 +598,18 @@ def generate_pdf():
         {"month": "September 2025", "sales": 20537.36, "units": 277, "asp": 74.15},
     ]
     p4_notes = [
-        "Continuous daily shelf replenishment (~9 pouches/day); restock front shelves every morning from backroom.",
-        "Rainy season pet appetite variations; dispatch 65 pouches weekly per store cluster.",
-        "Rakhi & Dog Day festive bundle prep; increase daily backroom buffer from 15 to 25 pouches.",
-        "End of monsoon stable velocity; maintain daily automated reorder triggers at depot."
+        "Continuous daily shelf replenishment (~9 units/day); restock front shelves every morning from backroom.",
+        "Seasonal variation; dispatch 65 units weekly per store cluster.",
+        "Festive bundle prep; increase daily backroom buffer from 15 to 25 units.",
+        "End of season stable velocity; maintain daily automated reorder triggers at depot."
     ]
-    story.extend(build_product_page("P00084", "Pedigree / Whiskas Wet Food Gravy",
-                                    "FMCG Daily Pantry Staple | 14-Day Rolling Folds", "STRICTLY DAILY",
+    story.extend(build_product_page("P00084",
+                                    "High-Velocity FMCG Staple | 14-Day Rolling Folds", "STRICTLY DAILY",
                                     "Lowest Daily MAPE & WAPE", p4_headers, p4_data, p4_text,
                                     "forecast_trend_P00084.png", p4_f_recs, p4_notes))
 
     # ==========================================
-    # PAGE 7: SKU 5 - P04291 (Chew Treats)
+    # PAGE 7: SKU 5 - P04291
     # ==========================================
     p5_headers = ["Rank", "Model", "|Bias| (Rs.k) [Best]", "Raw Bias (Rs.k)", "RMSE (Rs.k)", "MAE (Rs.k)", "Vol Acc (%)", "Fin Acc (%)"]
     p5_data = [
@@ -621,8 +622,8 @@ def generate_pdf():
     ]
     p5_text = (
         "<b>Operational Analysis:</b> <b>SMA (8w) and SES win Rank 1 & 2</b> with near-zero bias (|Bias| = 0.11k–0.20k) and >94% "
-        "Financial Accuracy. On front-counter chew treats (ASP Rs. 64), maintaining minimal bias ensures glass impulse display jars "
-        "never sit empty while keeping retail margin intact."
+        "Financial Accuracy. On front-counter items (ASP Rs. 64), maintaining minimal bias ensures display inventory "
+        "never sits empty while keeping retail margin intact."
     )
     p5_f_recs = [
         {"month": "June 2025", "sales": 18341.30, "units": 286, "asp": 64.08},
@@ -631,13 +632,13 @@ def generate_pdf():
         {"month": "September 2025", "sales": 20363.41, "units": 318, "asp": 64.08},
     ]
     p5_notes = [
-        "Checkout impulse jar replenishment; maintain 70 sticks weekly per checkout register jar.",
-        "Monsoon indoor pet boredom chewing; increase checkout jar top-up to 80 sticks weekly.",
-        "International Dog Day treats push; place secondary promo display bowl at billing counter.",
-        "Post-festival stabilization; return to standard order-up-to level S of 75 sticks per register."
+        "Checkout impulse jar replenishment; maintain 70 units weekly per register display.",
+        "Indoor seasonal demand; increase checkout jar top-up to 80 units weekly.",
+        "Festive promotional push; place secondary promo display bowl at billing counter.",
+        "Post-festival stabilization; return to standard order-up-to level S of 75 units per register."
     ]
-    story.extend(build_product_page("P04291", "Barkbone Rawhide Chicken Chew Treats",
-                                    "Front-Counter Impulse | Monthly Periodic Review", "Weekly (W-SUN)",
+    story.extend(build_product_page("P04291",
+                                    "Low-Ticket Impulse SKU | Monthly Periodic Review", "Weekly (W-SUN)",
                                     "Near-Zero Bias (|Bias| -> 0)", p5_headers, p5_data, p5_text,
                                     "forecast_trend_P04291.png", p5_f_recs, p5_notes))
 
@@ -646,8 +647,8 @@ def generate_pdf():
     # ==========================================
     story.append(Paragraph("6. Consolidated Master Trend Line Dashboard (June – September 2025)", h1_style))
     story.append(Paragraph(
-        "The multi-panel comparative visualization below displays the continuous out-of-sample sales trend lines across all 5 merchandise "
-        "categories generated strictly with their designated champion models. Each panel showcases historical data transition, 80% forecast "
+        "The multi-panel comparative visualization below displays the continuous out-of-sample sales trend lines across all 5 SKUs "
+        "generated strictly with their designated champion models. Each panel showcases historical data transition, 80% forecast "
         "confidence intervals, and major Indian calendar events (Raksha Bandhan, International Dog Day, and Salary Paydays).",
         body_style
     ))
@@ -672,12 +673,12 @@ def generate_pdf():
     ))
     story.append(Spacer(1, 2))
 
-    summary_headers = ["SKU / Product", "Champion Model", "June 2025", "July 2025", "August 2025", "September 2025", "Total Q3 Revenue", "Total Units"]
+    summary_headers = ["SKU / Product ID", "Champion Model", "June 2025", "July 2025", "August 2025", "September 2025", "Total Q3 Revenue", "Total Units"]
     summary_data = [[Paragraph(f"<b>{h}</b>", th_style) for h in summary_headers]]
 
     master_table_rows = [
         [
-            Paragraph("<b>P04606</b><br/>10kg Food", td_left),
+            Paragraph("<b>Product P04606</b>", td_left),
             Paragraph("★ Arth Event Ridge", td_left_bold),
             Paragraph("Rs. 1,88,353<br/>(86 units)", td_style),
             Paragraph("Rs. 2,20,040<br/>(100 units)", td_style),
@@ -687,7 +688,7 @@ def generate_pdf():
             Paragraph("<b>436 units</b>", td_bold)
         ],
         [
-            Paragraph("<b>P02065</b><br/>Hygiene", td_left),
+            Paragraph("<b>Product P02065</b>", td_left),
             Paragraph("SMA (8w)", td_left_bold),
             Paragraph("Rs. 1,81,642<br/>(369 units)", td_style),
             Paragraph("Rs. 1,85,317<br/>(376 units)", td_style),
@@ -697,7 +698,7 @@ def generate_pdf():
             Paragraph("<b>1,488 units</b>", td_bold)
         ],
         [
-            Paragraph("<b>P01032</b><br/>Luxury Beds", td_left),
+            Paragraph("<b>Product P01032</b>", td_left),
             Paragraph("★ Arth Event Ridge", td_left_bold),
             Paragraph("Rs. 81,425<br/>(6 units)", td_style),
             Paragraph("Rs. 77,330<br/>(6 units)", td_style),
@@ -707,7 +708,7 @@ def generate_pdf():
             Paragraph("<b>24 units</b>", td_bold)
         ],
         [
-            Paragraph("<b>P00084</b><br/>Wet Gravy", td_left),
+            Paragraph("<b>Product P00084</b>", td_left),
             Paragraph("★ Arth Daily Ridge", td_left_bold),
             Paragraph("Rs. 19,693<br/>(266 units)", td_style),
             Paragraph("Rs. 20,599<br/>(278 units)", td_style),
@@ -717,7 +718,7 @@ def generate_pdf():
             Paragraph("<b>1,107 units</b>", td_bold)
         ],
         [
-            Paragraph("<b>P04291</b><br/>Chew Treats", td_left),
+            Paragraph("<b>Product P04291</b>", td_left),
             Paragraph("SMA (8w)", td_left_bold),
             Paragraph("Rs. 18,341<br/>(286 units)", td_style),
             Paragraph("Rs. 21,155<br/>(330 units)", td_style),
@@ -773,10 +774,10 @@ def generate_pdf():
          "reflect real inventory holding and shortage costs. Selecting by operational factors ensures store shelves are actually fulfilled."),
 
         ("Q3: Why is Daily resolution necessary for P00084, but harmful for P04606 and P01032?",
-         "<b>Defense:</b> P00084 is a wet food pouch consumed daily by pets, meaning daily shelf replenishment and promotional "
-         "spikes contain real autoregressive signal (lag_1, lag_7). In contrast, P04606 (10kg bulk food) and P01032 (luxury crates) "
+         "<b>Defense:</b> P00084 is a high-velocity consumable purchased daily, meaning daily shelf replenishment and promotional "
+         "spikes contain real autoregressive signal (lag_1, lag_7). In contrast, P04606 and P01032 "
          "have 45.6% and 69.1% zero-sales days. Modeling zero-inflated series at daily resolution forces algorithms to predict "
-         "meaningless fractional units (e.g., 0.15 crates/day). Aggregating them to weekly aligns with warehouse pallet ordering cycles."),
+         "meaningless fractional units (e.g., 0.15 units/day). Aggregating them to weekly aligns with warehouse pallet ordering cycles."),
 
         ("Q4: How does your 15-event Indian calendar outperform classical Fourier terms?",
          "<b>Defense:</b> Hindu and cultural festivals (Diwali, Raksha Bandhan, Ganesh Chaturthi) follow a lunisolar calendar. "
@@ -812,7 +813,7 @@ def generate_pdf():
     story.append(t_repo)
 
     doc.build(story, canvasmaker=NumberedCanvas)
-    print(f"[+] Successfully generated Product-Tailored Defense PDF with Fin Accuracy and Trend Graphs: {PDF_PATH}")
+    print(f"[+] Successfully generated Product-Tailored Defense PDF (Product IDs Only): {PDF_PATH}")
 
 if __name__ == '__main__':
     generate_pdf()

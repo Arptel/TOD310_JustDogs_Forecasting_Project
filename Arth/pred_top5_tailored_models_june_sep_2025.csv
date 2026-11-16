@@ -1,21 +1,21 @@
 product_id,product_name,top_model,month,predicted_sales_INR,predicted_units,asp_INR
-P04606,Royal Canin / Pedigree 10kg Premium Food,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),June 2025,188353.19,86,2202.66
-P04606,Royal Canin / Pedigree 10kg Premium Food,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),July 2025,220039.53,100,2202.66
-P04606,Royal Canin / Pedigree 10kg Premium Food,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),August 2025,266306.39,121,2202.66
-P04606,Royal Canin / Pedigree 10kg Premium Food,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),September 2025,283588.16,129,2202.66
-P02065,Himalaya / Bio-Groom Grooming & Hygiene,SMA (8-Week Recursive Moving Average),June 2025,181642.18,369,492.35
-P02065,Himalaya / Bio-Groom Grooming & Hygiene,SMA (8-Week Recursive Moving Average),July 2025,185317.42,376,492.35
-P02065,Himalaya / Bio-Groom Grooming & Hygiene,SMA (8-Week Recursive Moving Average),August 2025,186602.34,379,492.35
-P02065,Himalaya / Bio-Groom Grooming & Hygiene,SMA (8-Week Recursive Moving Average),September 2025,179404.45,364,492.35
-P01032,Luxury Bedding / European Travel Crates,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),June 2025,81424.5,6,12654.93
-P01032,Luxury Bedding / European Travel Crates,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),July 2025,77330.17,6,12654.93
-P01032,Luxury Bedding / European Travel Crates,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),August 2025,76357.13,6,12654.93
-P01032,Luxury Bedding / European Travel Crates,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),September 2025,75123.74,6,12654.93
-P00084,Pedigree / Whiskas Wet Food Gravy,★ Arth Daily Event-Aware Ridge (Strictly Daily),June 2025,19693.26,266,74.15
-P00084,Pedigree / Whiskas Wet Food Gravy,★ Arth Daily Event-Aware Ridge (Strictly Daily),July 2025,20599.26,278,74.15
-P00084,Pedigree / Whiskas Wet Food Gravy,★ Arth Daily Event-Aware Ridge (Strictly Daily),August 2025,21202.8,286,74.15
-P00084,Pedigree / Whiskas Wet Food Gravy,★ Arth Daily Event-Aware Ridge (Strictly Daily),September 2025,20537.36,277,74.15
-P04291,Barkbone Rawhide Chicken Chew Treats,SMA (8-Week Moving Average / Low-Bias),June 2025,18341.3,286,64.08
-P04291,Barkbone Rawhide Chicken Chew Treats,SMA (8-Week Moving Average / Low-Bias),July 2025,21154.52,330,64.08
-P04291,Barkbone Rawhide Chicken Chew Treats,SMA (8-Week Moving Average / Low-Bias),August 2025,20544.9,321,64.08
-P04291,Barkbone Rawhide Chicken Chew Treats,SMA (8-Week Moving Average / Low-Bias),September 2025,20363.41,318,64.08
+P04606,Product P04606,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),June 2025,188353.19,86,2202.66
+P04606,Product P04606,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),July 2025,220039.53,100,2202.66
+P04606,Product P04606,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),August 2025,266306.39,121,2202.66
+P04606,Product P04606,★ Arth Event-Aware Ridge (Autoregressive + Calendar Dummies),September 2025,283588.16,129,2202.66
+P02065,Product P02065,SMA (8-Week Recursive Moving Average),June 2025,181642.18,369,492.35
+P02065,Product P02065,SMA (8-Week Recursive Moving Average),July 2025,185317.42,376,492.35
+P02065,Product P02065,SMA (8-Week Recursive Moving Average),August 2025,186602.34,379,492.35
+P02065,Product P02065,SMA (8-Week Recursive Moving Average),September 2025,179404.45,364,492.35
+P01032,Product P01032,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),June 2025,81424.5,6,12654.93
+P01032,Product P01032,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),July 2025,77330.17,6,12654.93
+P01032,Product P01032,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),August 2025,76357.13,6,12654.93
+P01032,Product P01032,★ Arth Event-Aware Ridge (Payday Surges & Intermittent Dummies),September 2025,75123.74,6,12654.93
+P00084,Product P00084,★ Arth Daily Event-Aware Ridge (Strictly Daily),June 2025,19693.26,266,74.15
+P00084,Product P00084,★ Arth Daily Event-Aware Ridge (Strictly Daily),July 2025,20599.26,278,74.15
+P00084,Product P00084,★ Arth Daily Event-Aware Ridge (Strictly Daily),August 2025,21202.8,286,74.15
+P00084,Product P00084,★ Arth Daily Event-Aware Ridge (Strictly Daily),September 2025,20537.36,277,74.15
+P04291,Product P04291,SMA (8-Week Moving Average / Low-Bias),June 2025,18341.3,286,64.08
+P04291,Product P04291,SMA (8-Week Moving Average / Low-Bias),July 2025,21154.52,330,64.08
+P04291,Product P04291,SMA (8-Week Moving Average / Low-Bias),August 2025,20544.9,321,64.08
+P04291,Product P04291,SMA (8-Week Moving Average / Low-Bias),September 2025,20363.41,318,64.08

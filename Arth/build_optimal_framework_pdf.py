@@ -176,7 +176,7 @@ def build_pdf():
             Paragraph("<b>Holt-Winters</b><br/>RMSE 19.83k | Acc 62.0%", td_left_bold),
         ],
         [
-            Paragraph("<b>P02065</b><br/>Bio-Groom Care<br/>₹930.40", td_left),
+            Paragraph("<b>P02065</b><br/>Product P02065<br/>₹930.40", td_left),
             Paragraph("<b>Weekly</b><br/>Filters 45% Sat-Sun grooming surge", td_left),
             Paragraph("32 Wks Train / <b>13 Wks Test</b> (Q1/Q2 2025)", td_left),
             Paragraph("<b>Volume Acc (WAPE)</b>", td_left_bold),
@@ -310,7 +310,7 @@ def build_pdf():
         "Complex models overfitted to festive holiday surges and over-predicted. For non-promotional bulk staples, classical exponential smoothing is mathematically superior."
     )
     story.extend(make_scorecard_table(
-        "P04606", "Royal Canin / Pedigree 10kg Dry Food", "Bulk Dry Nutrition | ASP ₹2,202.66",
+        "P04606", "Product P04606", "Bulk Dry Nutrition | ASP ₹2,202.66",
         "Weekly (Mon–Sun)", "58 Wks Train / 13 Wks Holdout", "Lowest RMSE & Minimal Outlier Loss",
         p1_text, p1_rows
     ))
@@ -331,7 +331,7 @@ def build_pdf():
         "Holt-Winters wins on RMSE (15.42k), while Arth Ridge captures 62.52% accuracy, confirming that simple weekly models provide robust salon inventory replenishment."
     )
     story.extend(make_scorecard_table(
-        "P02065", "Himalaya / Bio-Groom Hygiene Care", "Grooming & Health | ASP ₹930.40",
+        "P02065", "Product P02065", "Grooming & Health | ASP ₹930.40",
         "Weekly (Mon–Sun)", "32 Wks Train / 13 Wks Holdout", "Volume Accuracy (100 - WAPE)",
         p2_text, p2_rows
     ))
@@ -354,7 +354,7 @@ def build_pdf():
         "because it specifically encodes the salary payday surge (28th–3rd of the month). Pet parents purchase luxury assets right after salary credit."
     )
     story.extend(make_scorecard_table(
-        "P01032", "Savic / Ferplast Luxury Orthopedic Crate", "Capital Luxury Goods | ASP ₹12,654.93",
+        "P01032", "Product P01032", "Capital Luxury Goods | ASP ₹12,654.93",
         "Weekly / Bi-Weekly", "127 Wks Train / 13 Wks Holdout", "Lowest MAE & Negative Bias (Zero Dead Capital)",
         p3_text, p3_rows
     ))
@@ -375,7 +375,7 @@ def build_pdf():
         "winning Rank 1 with 61.67% accuracy, 2.08k RMSE, and the lowest MAPE (31.69%). Daily lag recursion models pet feeding habits with pinpoint precision."
     )
     story.extend(make_scorecard_table(
-        "P00084", "Pedigree / Royal Canin Gravy Wet Food", "High-Velocity FMCG | ASP ₹73.93",
+        "P00084", "Product P00084", "High-Velocity FMCG | ASP ₹73.93",
         "Daily Dynamics (Aggregated to 13-Wk Holdout)", "907 Days Train / 90 Days Test (13 Wks)", "MAPE & WAPE Accuracy",
         p4_text, p4_rows
     ))
